@@ -1,0 +1,88 @@
+@use "@/assets/scss/style" as *;
+.button {
+  z-index: 1;
+  font-family: "Satoshi", sans-serif;
+  font-size: 13px;
+  display: inline-flex;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  border: 1px solid $grayColor;
+  background-color: $mutedColor;
+  color: $liteColor;
+  line-height: 1.6;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border 0.5s ease;
+
+  // &__container {
+  //   display: flex;
+
+  //   &:hover {
+  //     img {
+  //       background-color: $darkColor;
+  //       color: $liteColor;
+  //       border: 1px solid $liteColor;
+  //       scale: 1.1;
+  //     }
+  //   }
+  // }
+  &:hover {
+    background-color: $liteColor;
+    color: $darkColor;
+    border: 1px solid $liteColor;
+  }
+
+  &--light {
+    background-color: $liteColor;
+    border: 1px solid $liteColor;
+    color: $darkColor;
+    &:hover {
+      background-color: $mutedColor;
+      color: $liteColor;
+      border: 1px solid $grayColor;
+    }
+  }
+  &__icon {
+    display: block;
+    background-color: transparent;
+    color: $liteColor;
+    border: 1px solid $liteColor;
+
+    padding: 8px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+
+    transition:
+      background-color 0.5s ease,
+      color 0.5s ease,
+      border 0.5s ease;
+  }
+  &--down {
+    display: flex;
+    justify-self: center;
+    background-color: transparent;
+    column-gap: 10px;
+
+    border: 1px solid transparent;
+    color: $liteColor;
+
+    &:hover {
+      background-color: transparent;
+      color: $liteColor;
+      border: 1px solid transparent;
+      .button__icon {
+        background-color: $darkColor;
+        color: $liteColor;
+        border: 1px solid $liteColor;
+        scale: 1.1;
+      }
+    }
+  }
+}

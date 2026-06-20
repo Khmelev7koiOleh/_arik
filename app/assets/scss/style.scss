@@ -1,0 +1,160 @@
+// 📄 style.scss
+@use "sass:math";
+@use "fonts";
+// @use "variables";
+// by default
+
+$fontFamily: "Chillax", sans-serif;
+$fontFamilySecondary: "Satoshi", sans-serif;
+$fontFamilyTertiary: "Gambetta", sans-serif;
+$fontSize: toRem(16);
+
+// main colors
+$bgColor: #0e0e0e;
+$darkColor: #0e0e0e;
+$mainColor: rgba(218, 196, 167, 0.6);
+$liteColor: #dac5a7;
+$liteHoverColor: #eaddca;
+$grayColor: rgba(218, 196, 167, 0.15);
+$mutedColor: rgba(218, 196, 167, 0.05);
+
+// $goldColor: #9d875c;
+// $goldColorHover: #c1ab81;
+// $bgGold: #c1ab81;
+$bgPink: #dfccc2;
+
+//  min width
+$minWidth: 320;
+// max width
+$maxWidth: 1920;
+
+// max width container
+$maxWidthContainer: 0;
+
+//container padding
+$containerPadding: 100;
+
+// breakpoint-width
+$containerWidth: $maxWidthContainer + $containerPadding;
+//breakpoints
+
+$pc: $containerWidth;
+$tablet: 991.98px;
+$mobile: 767.98px;
+$mobileSmall: 380px;
+
+// adaptative-type
+// 1 - no breakpoint (responsive)
+// 2 - by breakpoint
+$responsiveType: 1;
+
+// reset
+
+// @import "base/null";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Takes full screen height */
+  margin: 0;
+  transition: all 0.3s ease;
+
+  background-color: $bgPink;
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
+  //   loading site
+  .loaded & {
+  }
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  @supports (overflow: clip) {
+    overflow: clip;
+  }
+  > main {
+    padding-top: 70px;
+    @media (min-width: $mobile) {
+      // padding-top: 100px;
+    }
+
+    flex: 1 1 auto;
+  }
+  > * {
+    min-width: 0;
+  }
+}
+
+// restrictive container
+
+// @if ($responsiveType==1) {
+//   [class*="__container"] {
+//     @if ($maxWidthContainer > 0) {
+//       max-width: toRem($containerWidth);
+//       margin: 0 auto;
+//     }
+
+//     @if ($containerPadding > 0) {
+//       @if ($maxWidthContainer > 0) {
+//         padding: 0 toRem(math.div($containerPadding, 2));
+//       } @else {
+//         @include adaptiveValue(
+//           "padding-left",
+//           math.div($containerPadding, 2),
+//           15
+//         );
+//         @include adaptiveValue(
+//           "padding-right",
+//           math.div($containerPadding, 2),
+//           15
+//         );
+//       }
+//     }
+//   }
+// } @else {
+//   [class*="__container"] {
+//     // max-width: toRem($containerWidth);
+//     margin: 0 auto;
+//     @if ($containerPadding > 0) {
+//       max-width: toRem($containerWidth);
+//       //   padding: 0 toRem(math.div($containerPadding, 2));
+//     } @else {
+//       @if ($containerPadding > 0) {
+//         padding: 0 toRem(math.div($containerPadding, 2));
+//       }
+//     }
+//     @media (max-width: $pc) {
+//       max-width: toRem(970);
+//     }
+//     @media (max-width: $tablet) {
+//       max-width: toRem(750);
+//     }
+//     @media (max-width: $mobile) {
+//       max-width: none;
+//       @if ($containerPadding > 0 and $ma xWidthContainer > 0) {
+//         padding: 0 toRem(math.div($containerPadding, 2));
+//       }
+//     }
+//   }
+// }
+
+// turn on/off certain styles
+
+// common styles
+
+// @import "common";
+
+// turn on/off certain blocks
+
+// @import "&";
+// @import "footer";
+
+// turn on/off certain pages
+
+// @import "home";

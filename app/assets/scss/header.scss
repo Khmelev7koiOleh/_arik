@@ -1,0 +1,203 @@
+@use "@/assets/scss/style" as *;
+.header {
+  // padding-top: 48px;
+  position: fixed;
+  top: clamp(10px, 5vw, 48px);
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  z-index: 50;
+  &__body {
+    // max-width: 595px;
+    border-radius: 2px;
+    // backdrop-filter: blur(3px);
+    border: 1px solid $grayColor;
+    // background-color: $mutedColor;
+    padding-left: 24px;
+    padding-right: 12px;
+    padding-block: 12px;
+    position: relative;
+    z-index: 50;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 2px;
+      border: 1px solid $grayColor;
+      background-color: $mutedColor;
+
+      backdrop-filter: blur(3px);
+    }
+    @media (max-width: $mobile) {
+      flex-grow: 1;
+    }
+  }
+  &__content {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &__logo {
+    // width: 100%;
+    // height: auto;
+    position: relative;
+    z-index: 1;
+    img {
+      aspect-ratio: 52.17 / 20;
+      width: 100%;
+      height: auto;
+    }
+    padding-right: 10px;
+  }
+  &__nav {
+  }
+  &__button-container {
+    display: flex;
+
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+  &__burger {
+    position: relative;
+    z-index: 1;
+    @media (min-width: $mobile) {
+      display: none;
+    }
+    span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background-color: $liteColor;
+      margin-bottom: 4px;
+      border-radius: 1px;
+      transition:
+        transform 0.5s ease-in-out,
+        opacity 0.5s ease-in-out;
+    }
+
+    &--active {
+      // background: #000;
+
+      span {
+        background-color: $liteColor;
+      }
+      span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        transform: translateY(0px) rotate(45deg);
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.nav-header {
+  @media (max-width: $mobile) {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(100%);
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 110px 30px;
+    gap: 10px 20px;
+    transition: transform 0.5s ease-in-out;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background-color: $darkColor;
+      z-index: 0;
+      opacity: 0.5;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    &--active {
+      transform: translateX(0%);
+      // backdrop-filter: blur(3px);
+    }
+    width: 100vw;
+    height: 100vh;
+  }
+  @media (min-width: $mobile) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 20px;
+  }
+
+  &__link {
+    position: relative;
+    z-index: 1;
+    font-size: 24px;
+    font-family: "Satoshi", sans-serif;
+
+    line-height: 1.6;
+    color: $liteColor;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    @media (min-width: $mobile) {
+      font-size: 13px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 0.5px;
+      background-color: $mutedColor;
+      transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        width 0.3s ease,
+        left 0.3s ease;
+      // border-radius: 2px;
+      // opacity: 0;
+      // transition: opacity 0.3s ease;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $liteHoverColor;
+        // color: $darkColor;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.5px;
+          background-color: $liteColor;
+        }
+      }
+    }
+  }
+
+  &--no-transition {
+    transition: none !important;
+  }
+}
+.no-scroll {
+  overflow: hidden;
+}
