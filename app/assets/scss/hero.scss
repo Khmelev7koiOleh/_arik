@@ -1,4 +1,5 @@
 .hero {
+  padding-block: clamp(15px, 5vw, 30px);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -22,7 +23,8 @@
 
     object-fit: contain;
 
-    aspect-ratio: 800/700;
+    aspect-ratio: 719/814;
+    // transform: translateY(-12%);
   }
   &__text-block {
     justify-self: center;

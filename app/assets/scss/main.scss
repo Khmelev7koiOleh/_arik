@@ -1,8 +1,10 @@
 @use "@/assets/scss/style" as *;
-@use "@/assets/scss/hero" as *;
+
 @use "@/assets/scss/button" as *;
 @use "@/assets/scss/header" as *;
 @use "@/assets/scss/common" as *;
+@use "@/assets/scss/hero" as *;
+@use "@/assets/scss/clients" as *;
 
 body {
   background-color: $bgColor;
