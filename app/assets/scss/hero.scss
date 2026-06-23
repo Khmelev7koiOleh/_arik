@@ -7,23 +7,24 @@
   justify-content: center;
   font-family: "Gambetta", sans-serif;
   text-transform: uppercase;
-
+  min-width: 100vw;
   &__container {
     min-height: 100svh;
+    margin: 0 auto;
+
     text-align: center;
-    padding: 15px;
   }
 
   &__image {
-    margin: 0 auto;
     transform: translateY(-12%);
     mix-blend-mode: lighten;
-    width: 100vw;
+    width: 100%;
     height: 65svh;
 
     object-fit: contain;
 
     aspect-ratio: 719/814;
+
     // transform: translateY(-12%);
   }
   &__text-block {

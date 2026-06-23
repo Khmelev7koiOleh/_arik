@@ -3,7 +3,7 @@
   padding-top: clamp(15px, 12vw, 128px);
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0px 0;
 
@@ -12,8 +12,10 @@
   overflow: hidden;
   user-select: none;
   -webkit-user-select: none;
-  &__name {
-    color: red;
+  &__container {
+    width: 100%;
+    margin: 0 auto;
+    justify-self: center;
   }
   //   &__container {
   //     width: 1200px;
@@ -22,38 +24,27 @@
   //   }
 
   .clients__track {
-    // display: flex;
-    // width: max-content;
-    // gap: 60px;  display: flex;
-    display: flex;
-
-    width: max-content;
-    will-change: transform;
-    padding: 0 5px;
-    gap: 10px;
-    @media (min-width: $mobile) {
-      gap: 50px;
-    }
   }
 
   &__item {
-    flex-shrink: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 160px;
-    height: 80px;
-    /* background: rgba(255, 255, 255, 0.03); */
-    border-radius: 14px;
+    margin-inline: 40px;
+    gap: 30px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
 
-    padding: 12px 16px;
+    /* background: rgba(255, 255, 255, 0.03); */
+    // border-radius: 14px;
+
+    // padding: 12px 16px;
 
     transition:
-      background 0.3s ease,
+      // background 0.3s ease,
       transform 0.3s ease;
     &:hover {
       /* background: rgba(255, 255, 255, 0.08); */
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
     img {
