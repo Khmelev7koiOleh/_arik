@@ -62,9 +62,10 @@
     transition:
       background-color 0.5s ease,
       color 0.5s ease,
-      border 0.5s ease;
+      border 0.5s ease,
+      fill 0.5s ease;
   }
-  &--down {
+  &--upl {
     display: flex;
     justify-self: center;
     background-color: transparent;
@@ -72,17 +73,31 @@
 
     border: 1px solid transparent;
     color: $liteColor;
-
+    padding: 10px;
     &:hover {
       background-color: transparent;
       color: $liteColor;
       border: 1px solid transparent;
-      .button__icon {
-        background-color: $darkColor;
-        color: $liteColor;
+      svg {
+        background-color: $liteColor;
+
         border: 1px solid $liteColor;
         scale: 1.1;
       }
+      path {
+        fill: #000;
+      }
+    }
+    svg {
+      border: 1px solid $grayColor;
+      box-sizing: content-box;
+      width: 15px;
+      height: 15px;
+      padding: 10px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      rotate: -135deg;
+      transition: all 0.5s ease;
     }
   }
 }

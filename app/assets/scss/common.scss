@@ -57,4 +57,29 @@
 }
 
 .text-font {
+  &__subtitle {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    line-height: 160%;
+    text-transform: none;
+  }
+  &__title {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 130%;
+    text-transform: uppercase;
+  }
+  &__text {
+    font-family: "Chillax", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0px;
+    line-height: 150%;
+    text-transform: none;
+    color: $liteColor;
+  }
 }
