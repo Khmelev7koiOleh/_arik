@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import Marquee from "~/components/Marquee.vue";
+import CardWork from "~/components/CardWork.vue";
 
 const allicons = ref([
   "/clients/01.svg",
@@ -11,6 +12,32 @@ const allicons = ref([
   "/clients/06.svg",
 ]);
 const duplicatedIcons = [...allicons.value, ...allicons.value];
+const selectedWork = ref([
+  {
+    id: 1,
+    img: "/works/01.jpg",
+    text: "Space",
+    link: "webdesign",
+  },
+  {
+    id: 2,
+    img: "/works/02.jpg",
+    text: "Nova",
+    link: "webdesign",
+  },
+  {
+    id: 3,
+    img: "/works/03.jpg",
+    text: "Sonic",
+    link: "webdesign",
+  },
+  {
+    id: 4,
+    img: "/works/04.jpg",
+    text: "Solar",
+    link: "webdesign",
+  },
+]);
 </script>
 <template>
   <section class="hero">
@@ -48,7 +75,7 @@ const duplicatedIcons = [...allicons.value, ...allicons.value];
   <section class="services">
     <div class="services__container">
       <article class="services__item item-services">
-        <p class="item-services__index">1</p>
+        <p class="item-services__index text-font__subtitle">01</p>
         <h4 class="item-services__title text-font__title">Web design</h4>
         <p class="item-services__text text-font__text">
           Visually stunning web designs that captivate your audience by blending
@@ -73,7 +100,7 @@ const duplicatedIcons = [...allicons.value, ...allicons.value];
       </article>
 
       <article class="services__item item-services">
-        <p class="item-services__index">2</p>
+        <p class="item-services__index text-font__subtitle">02</p>
         <h4 class="item-services__title text-font__title">Development</h4>
         <p class="item-services__text text-font__text">
           Get custom web development solutions that are tailored to your
@@ -97,7 +124,7 @@ const duplicatedIcons = [...allicons.value, ...allicons.value];
       </article>
 
       <article class="services__item item-services">
-        <p class="item-services__index">3</p>
+        <p class="item-services__index text-font__subtitle">03</p>
         <h4 class="item-services__title text-font__title">Content & Seo</h4>
         <p class="item-services__text text-font__text">
           Proven SEO strategies that enhance your online performance, bringing
@@ -119,6 +146,35 @@ const duplicatedIcons = [...allicons.value, ...allicons.value];
           <a href="" class="item-services__button">About Webdesign</a>
         </div>
       </article>
+    </div>
+  </section>
+
+  <section class="selectedwork">
+    <div class="selectedwork__container">
+      <div class="selectedwork__header header-work">
+        <h2 class="header-work__title text-font__title--l">
+          Selected <span>Work</span>
+        </h2>
+        <div class="header-work__button-container button button--upl">
+          <a href="" class="header-work__button">See all</a>
+          <svg
+            width="13"
+            height="15"
+            viewBox="0 0 13 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.0422 8.92187L6.41716 14.5469C6.37484 14.5913 6.32394 14.6267 6.26753 14.6509C6.21113 14.675 6.1504 14.6875 6.08904 14.6875C6.02767 14.6875 5.96695 14.675 5.91054 14.6509C5.85414 14.6267 5.80323 14.5913 5.76091 14.5469L0.135914 8.92187C0.0488896 8.83485 -9.16948e-10 8.71682 0 8.59375C9.16949e-10 8.47068 0.0488896 8.35265 0.135914 8.26563C0.222938 8.1786 0.340968 8.12971 0.464039 8.12971C0.58711 8.12971 0.70514 8.1786 0.792164 8.26563L5.62029 13.0859V0.46875C5.62029 0.34443 5.66968 0.225201 5.75758 0.137294C5.84549 0.049386 5.96472 0 6.08904 0C6.21336 0 6.33259 0.049386 6.4205 0.137294C6.5084 0.225201 6.55779 0.34443 6.55779 0.46875V13.0859L11.3859 8.26563C11.4729 8.1786 11.591 8.12971 11.714 8.12971C11.8371 8.12971 11.9551 8.1786 12.0422 8.26563C12.1292 8.35265 12.1781 8.47068 12.1781 8.59375C12.1781 8.71682 12.1292 8.83485 12.0422 8.92187Z"
+              fill="#DAC5A7"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="selectedwork__body">
+        <CardWork v-for="i in selectedWork" :key="i.id" :work="i" />
+      </div>
     </div>
   </section>
   <img src="/assets/img/clients/01.svg" alt="" />

@@ -247,6 +247,7 @@ onUnmounted(() => {
 .marquee-track {
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
   gap: v-bind("`${props.space}px`");
   will-change: transform;
   backface-visibility: hidden;
