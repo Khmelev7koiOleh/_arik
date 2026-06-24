@@ -1,0 +1,67 @@
+@use "@/assets/scss/style" as *;
+.card-work {
+  &__container {
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      .card-work__image img {
+        scale: 1.05;
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 1px solid $grayColor;
+    aspect-ratio: 684/513;
+
+    img {
+      transition: scale 1s ease;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__body {
+    position: absolute;
+
+    left: clamp(12px, 2.5vw, 32px);
+    right: clamp(12px, 2.5vw, 32px);
+    bottom: clamp(12px, 2.5vw, 32px);
+  }
+}
+.body-work {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 12px;
+  border-radius: 2px;
+  backdrop-filter: blur(1px);
+  background-color: $grayColor;
+  border: 1px solid $grayColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.body-work__text {
+  font-family: "Satoshi", sans-serif;
+
+  font-weight: 300;
+  font-size: clamp(20px, 2.5vw, 24px);
+  letter-spacing: 1px;
+  line-height: 130%;
+  color: $liteColor;
+}
+.body-work__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  @media (any-hover: hover) {
+    &:hover {
+      color: $liteHoverColor;
+      text-decoration: underline;
+    }
+  }
+}
