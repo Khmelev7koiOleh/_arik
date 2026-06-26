@@ -104,4 +104,44 @@
       transition: all 0.5s ease;
     }
   }
+
+  &--down {
+    display: flex;
+    justify-self: center;
+    background-color: transparent;
+    column-gap: 10px;
+
+    border: 1px solid transparent;
+    color: $liteColor;
+    padding: 10px;
+    &:hover {
+      background-color: transparent;
+      color: $liteColor;
+      border: 1px solid transparent;
+      svg {
+        background-color: $liteColor;
+
+        border: 1px solid $liteColor;
+        scale: 1.1;
+      }
+      path {
+        fill: #000;
+      }
+
+      // a {
+      //   text-decoration: underline;
+      // }
+    }
+    svg {
+      border: 1px solid $grayColor;
+      box-sizing: content-box;
+      width: 15px;
+      height: 15px;
+      padding: 10px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      rotate: 0deg;
+      transition: all 0.5s ease;
+    }
+  }
 }
