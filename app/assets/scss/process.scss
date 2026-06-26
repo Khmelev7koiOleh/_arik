@@ -1,0 +1,230 @@
+@use "@/assets/scss/style" as *;
+.process {
+  padding-inline: 10px;
+  counter-reset: item;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: clamp(15px, 12vw, 160px);
+  padding-bottom: clamp(60px, 12vw, 163px);
+  &__text-block {
+    padding-bottom: clamp(10px, 8vw, 68px);
+  }
+}
+.items-process {
+  &__header {
+    display: none;
+    @media (min-width: $tablet) {
+      display: grid;
+    }
+    // transform: translateX(0.5px);
+    position: relative;
+
+    height: 147px;
+
+    grid-template-rows: 46px, 1fr;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 0px;
+    &::after {
+      content: "";
+      //   position: absolute;
+      height: 100px;
+
+      width: 1px;
+      background-color: $grayColor;
+    }
+
+    &__arrow {
+      text-align: center;
+      background-color: $fullColor;
+    }
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+  }
+
+  &__button-container {
+    width: 46px;
+    height: 46px;
+    aspect-ratio: 1/1;
+    z-index: 1;
+    font-family: "Satoshi", sans-serif;
+    font-size: 13px;
+    display: inline-flex;
+    padding: 10px 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    outline: 16px solid $bgColor;
+    border: 1px solid $grayColor;
+    background-color: $mutedColor;
+    color: $mainColor;
+    line-height: 1.6;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition:
+      background-color 0.5s ease,
+      color 0.5s ease,
+      border 0.5s ease;
+  }
+}
+
+.item-process {
+  @media (max-width: $tablet) {
+    &:not(:last-child) {
+      padding-bottom: 75px;
+    }
+  }
+  display: flex;
+  align-self: flex-start;
+  flex: 0 1 100%;
+  width: 100%;
+  @media (min-width: $tablet) {
+    flex: 0 1 50%;
+    width: 50%;
+  }
+
+  position: relative;
+
+  // background-color: $liteColor;
+  //   padding: 12px;
+  @media (min-width: $tablet) {
+    &:nth-child(odd) {
+      padding-left: 100px;
+      align-self: flex-end;
+      transform: translateX(-0.5px);
+      &::before {
+        content: "";
+        left: 0px;
+      }
+
+      &::after {
+        left: 0px;
+
+        transform: translate(-50%, -50%);
+      }
+      // background-color: red;
+    }
+
+    &:nth-child(even) {
+      padding-right: 100px;
+
+      transform: translateX(0.5px);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      // top: 0;
+      // left: 0;
+      // right: 0;
+      // bottom: 0;
+      right: 0px;
+      // top: 56px;
+      width: 1px;
+      // height: calc(100% - 56px);
+      height: 100%;
+
+      background-color: $grayColor;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    right: 50%;
+    @media (min-width: $tablet) {
+      top: 50%;
+      right: 0px;
+    }
+    transform: translate(50%, -50%);
+    // left: -20px;
+    z-index: 4;
+    counter-increment: item;
+    content: counter(item, decimal-leading-zero);
+    width: 40px;
+    height: 40px;
+
+    @media (min-widht: $tablet) {
+      outline: 16px solid $bgColor;
+    }
+    border: 1px solid $grayColor;
+    align-content: center;
+    text-align: center;
+    color: $mainColor;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    border-radius: 50%;
+    background-color: $fullColor;
+    // background-image: url("../arrow.svg");
+
+    // background-repeat: no-repeat;
+    // background-position: center;
+  }
+
+  &__body {
+    padding-block: clamp(30px, 4vw, 48px);
+    padding-inline: clamp(10px, 4vw, 48px);
+    position: relative;
+
+    border: 1px solid $grayColor;
+    border-radius: 2px;
+    background-color: $fullColor;
+  }
+  &__time {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    @media (min-width: $tablet) {
+      top: 20px;
+      right: 20px;
+    }
+    z-index: 1;
+    font-family: "Satoshi", sans-serif;
+    font-size: 13px;
+    display: inline-flex;
+    padding: 6px 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    border: 1px solid $grayColor;
+    background-color: $mutedColor;
+    color: $liteColor;
+    line-height: 1.6;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition:
+      background-color 0.5s ease,
+      color 0.5s ease,
+      border 0.5s ease;
+  }
+
+  &__subtitle {
+    padding-right: 80px;
+  }
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+  &__list {
+  }
+  &__list-item {
+  }
+  &:last-child::before {
+    height: 50%;
+  }
+}
