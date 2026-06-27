@@ -82,7 +82,7 @@ const recycleItems = () => {
   const firstRect = firstChild.getBoundingClientRect();
   const lastRect = lastChild.getBoundingClientRect();
   const sign = getSign();
-  const buffer = 5; // teleport slightly earlier
+  const buffer = 0; // teleport slightly earlier
 
   if (axis === "x") {
     if (sign === -1) {
@@ -242,6 +242,20 @@ onUnmounted(() => {
   width: 100%;
   overflow: hidden;
   contain: layout; /* isolate layout from parent */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
 }
 
 .marquee-track {

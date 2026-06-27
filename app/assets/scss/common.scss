@@ -24,7 +24,7 @@
     line-height: 100%;
     text-transform: none;
     margin: 0 0 15px 0;
-
+    color: $liteColor;
     span {
       display: block;
       &:nth-child(2) {
@@ -48,7 +48,7 @@
       font-size: clamp(38px, 10vw, 96px);
     }
     &--s {
-      font-size: clamp(13px, 2vw, 22px);
+      font-size: clamp(24px, 6vw, 48px);
     }
   }
   &__text {
