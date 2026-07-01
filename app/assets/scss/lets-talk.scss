@@ -1,0 +1,57 @@
+@use "@/assets/scss/style" as *;
+.lets-talk {
+  &__container {
+    max-width: 1920px;
+    background-color: $mutedColor;
+    margin: 0 auto;
+    // background-color: red;
+  }
+  &__line-gradient {
+    width: 100vw;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(
+        to right,
+        rgba(218, 196, 167, 0.2),
+        transparent
+      );
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(
+        to left,
+        rgba(218, 196, 167, 0.2),
+        transparent
+      );
+    }
+  }
+  &__line {
+    width: 150%;
+    background-color: $mutedGrayColor;
+    padding-block: 10px;
+    border: 1px solid $grayColor;
+  }
+  &__line-item {
+    white-space: nowrap;
+    width: 100%;
+    word-break: none;
+    text-transform: uppercase;
+  }
+  &__content {
+    padding-block: clamp(15px, 12vw, 160px);
+  }
+}

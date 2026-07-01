@@ -1,7 +1,8 @@
 @use "@/assets/scss/style" as *;
 @use "@/assets/scss/reset" as *;
-@use "@/assets/scss/button" as *;
 @use "@/assets/scss/header" as *;
+@use "@/assets/scss/footer" as *;
+@use "@/assets/scss/button" as *;
 @use "@/assets/scss/common" as *;
 @use "@/assets/scss/hero" as *;
 @use "@/assets/scss/clients" as *;
@@ -11,6 +12,7 @@
 @use "@/assets/scss/process" as *;
 @use "@/assets/scss/reviews" as *;
 @use "@/assets/scss/about-module" as *;
+@use "@/assets/scss/lets-talk" as *;
 @import "tailwindcss";
 
 body {
