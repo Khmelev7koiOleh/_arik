@@ -16,8 +16,18 @@
     flex-wrap: wrap;
     // grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
+    align-items: flex-center;
 
     gap: 32px;
+    @media (max-width: 550.98px) {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+      align-items: center;
+    }
+    // @media (max-width: 550.98px) {
+    //   flex-direction: column;
+    // }
   }
 
   &__item {
@@ -168,10 +178,6 @@
 
     gap: 16px;
     color: $liteColor;
-
-    &:not(:last-child) {
-      margin-bottom: 32px;
-    }
   }
   &__link {
     font-family: "Satoshi", sans-serif;
@@ -184,6 +190,9 @@
     transition: color 0.5s ease-in-out;
     &:hover {
       color: $liteColor;
+    }
+    &:last-child {
+      margin-top: 32px;
     }
   }
 }

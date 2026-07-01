@@ -239,7 +239,7 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .marquee-wrapper {
-  width: 100%;
+  width: 110%;
   overflow: hidden;
   contain: layout; /* isolate layout from parent */
   // mask-image: linear-gradient(

@@ -103,7 +103,7 @@ onUnmounted(() => {
             id="pages-list"
             aria-label="Pages navigation"
           >
-            <li><a class="pages-footer__link" href="/">Home</a></li>
+            <li class="pages-footer__link"><a href="/">Home</a></li>
             <li class="pages-footer__link"><a href="/">Services</a></li>
             <li class="pages-footer__link"><a href="/">About</a></li>
             <li class="pages-footer__link"><a href="/">Contact</a></li>

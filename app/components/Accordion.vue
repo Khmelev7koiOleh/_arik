@@ -45,12 +45,13 @@ onUnmounted(() => {
 <template>
   <div class="accordion__wrapper">
     <div ref="accordionwrapper" class="accordion-list">
-      <div
-        @click="toggleSection()"
-        class="accordion__title"
-        :class="{ 'accordion__title--is-open': onOpen }"
-      >
-        <slot name="title" />
+      <div @click="toggleSection()" class="accordion__title">
+        <div
+          class="accordion__title-text"
+          :class="{ 'accordion__title-text--is-open': onOpen }"
+        >
+          <slot name="title" />
+        </div>
       </div>
       <ul
         ref="list"
@@ -83,6 +84,7 @@ onUnmounted(() => {
   @media (max-width: 767.98px) {
     text-align: center;
   }
+
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -96,6 +98,8 @@ onUnmounted(() => {
 }
 .accordion__title {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
   @media (max-width: 767.98px) {
     text-align: center;
   }
@@ -103,6 +107,31 @@ onUnmounted(() => {
     margin-bottom: 32px;
   }
 }
-.accordion__title--is-open {
+
+.accordion__title-text {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+    top: 0;
+    right: -20px;
+    background-image: url("/arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 10px;
+    width: 10px;
+
+    margin-top: 8px;
+
+    transform: rotate(0deg);
+  }
+}
+.accordion__title-text--is-open {
+  &::after {
+    transform: rotate(-180deg);
+  }
 }
 </style>
