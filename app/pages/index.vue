@@ -163,8 +163,9 @@ const selectedWork = ref([
           <h2 class="header-work__title text-font__title--l">
             Selected <span>Work</span>
           </h2>
-          <div class="header-work__button-container button button--upl">
-            <a href="" class="header-work__button">See all</a>
+          <div
+            class="header-work__button-container button button--upl button--tr"
+          >
             <svg
               width="13"
               height="15"
@@ -177,6 +178,7 @@ const selectedWork = ref([
                 fill="#DAC5A7"
               />
             </svg>
+            <a href="" class="header-work__button">See all</a>
           </div>
         </div>
 
