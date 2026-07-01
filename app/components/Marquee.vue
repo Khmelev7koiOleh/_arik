@@ -242,20 +242,20 @@ onUnmounted(() => {
   width: 100%;
   overflow: hidden;
   contain: layout; /* isolate layout from parent */
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
+  // mask-image: linear-gradient(
+  //   to right,
+  //   transparent,
+  //   black 15%,
+  //   black 85%,
+  //   transparent
+  // );
+  // -webkit-mask-image: linear-gradient(
+  //   to right,
+  //   transparent,
+  //   black 15%,
+  //   black 85%,
+  //   transparent
+  // );
 }
 
 .marquee-track {
@@ -267,6 +267,7 @@ onUnmounted(() => {
   backface-visibility: hidden;
   transform: translateZ(0);
   contain: layout style; /* isolate layout and style */
+  padding-block: 5px;
 }
 
 /* Each child gets its own GPU layer via inline style */
