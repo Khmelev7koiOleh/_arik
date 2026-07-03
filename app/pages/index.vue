@@ -74,17 +74,17 @@ const selectedWork = ref([
       </div>
     </section>
 
-    <section class="services">
-      <div class="services__container">
-        <article class="services__item item-services">
-          <p class="item-services__index text-font__subtitle">01</p>
-          <h4 class="item-services__title text-font__title">Web design</h4>
-          <p class="item-services__text text-font__text">
+    <section class="skills">
+      <div class="skills__container">
+        <article class="skills__item item-skills">
+          <p class="item-skills__index text-font__subtitle">01</p>
+          <h4 class="item-skills__title text-font__title">Web design</h4>
+          <p class="item-skills__text text-font__text">
             Visually stunning web designs that captivate your audience by
             blending your brand voice and customer needs.
           </p>
           <div
-            class="item-services__button-container button button--tr button--ul"
+            class="item-skills__button-container button button--tr button--ul"
           >
             <svg
               width="13"
@@ -99,19 +99,19 @@ const selectedWork = ref([
               />
             </svg>
 
-            <a href="" class="item-services__button">About Webdesign</a>
+            <a href="" class="item-skills__button">About Webdesign</a>
           </div>
         </article>
 
-        <article class="services__item item-services">
-          <p class="item-services__index text-font__subtitle">02</p>
-          <h4 class="item-services__title text-font__title">Development</h4>
-          <p class="item-services__text text-font__text">
+        <article class="skills__item item-skills">
+          <p class="item-skills__index text-font__subtitle">02</p>
+          <h4 class="item-skills__title text-font__title">Development</h4>
+          <p class="item-skills__text text-font__text">
             Get custom web development solutions that are tailored to your
             specifications, designed to deliver a flawless user experience.
           </p>
           <div
-            class="item-services__button-container button button--tr button--ul"
+            class="item-skills__button-container button button--tr button--ul"
           >
             <svg
               width="13"
@@ -125,19 +125,19 @@ const selectedWork = ref([
                 fill="#DAC5A7"
               />
             </svg>
-            <a href="" class="item-services__button">About Webdesign</a>
+            <a href="" class="item-skills__button">About Webdesign</a>
           </div>
         </article>
 
-        <article class="services__item item-services">
-          <p class="item-services__index text-font__subtitle">03</p>
-          <h4 class="item-services__title text-font__title">Content & Seo</h4>
-          <p class="item-services__text text-font__text">
+        <article class="skills__item item-skills">
+          <p class="item-skills__index text-font__subtitle">03</p>
+          <h4 class="item-skills__title text-font__title">Content & Seo</h4>
+          <p class="item-skills__text text-font__text">
             Proven SEO strategies that enhance your online performance, bringing
             you to the forefront of organic search results.
           </p>
           <div
-            class="item-services__button-container button button--tr button--ul"
+            class="item-skills__button-container button button--tr button--ul"
           >
             <svg
               width="13"
@@ -151,7 +151,7 @@ const selectedWork = ref([
                 fill="#DAC5A7"
               />
             </svg>
-            <a href="" class="item-services__button">About Webdesign</a>
+            <a href="" class="item-skills__button">About Webdesign</a>
           </div>
         </article>
       </div>
@@ -164,7 +164,7 @@ const selectedWork = ref([
             Selected <span>Work</span>
           </h2>
           <div
-            class="header-work__button-container button button--upl button--tr"
+            class="selectedwork__button-container button button--upl button--tr"
           >
             <svg
               width="13"
@@ -178,7 +178,7 @@ const selectedWork = ref([
                 fill="#DAC5A7"
               />
             </svg>
-            <a href="" class="header-work__button">See all</a>
+            <a href="" class="selectedwork__button">See all</a>
           </div>
         </div>
 
@@ -208,8 +208,7 @@ const selectedWork = ref([
         </div>
         <div class="process__items items-process">
           <div class="items-process__header">
-            <div class="items-process__arrow"></div>
-            <div class="items-process__button-container">
+            <div class="items-process__button-container button--default">
               <svg
                 width="13"
                 height="15"

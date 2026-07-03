@@ -1,0 +1,39 @@
+@use "@/assets/scss/style" as *;
+.hero-services {
+  padding-top: clamp(80px, 10vw, 224px);
+  padding-inline: 10px;
+  &__container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__button-container {
+    padding-block: clamp(15px, 6vw, 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12.5px;
+  }
+  &__button__text {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 130%;
+
+    text-transform: uppercase;
+    color: $liteColor;
+  }
+
+  &__image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1600/927;
+  }
+}

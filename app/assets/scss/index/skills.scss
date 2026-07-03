@@ -1,5 +1,5 @@
 @use "@/assets/scss/style" as *;
-.services {
+.skills {
   padding-top: clamp(15px, 12vw, 158px);
   padding-inline: 10px;
   &__container {
@@ -30,7 +30,7 @@
   }
 }
 
-.item-services {
+.item-skills {
   a {
     display: inline-block;
 

@@ -4,15 +4,21 @@
 @use "@/assets/scss/footer" as *;
 @use "@/assets/scss/button" as *;
 @use "@/assets/scss/common" as *;
-@use "@/assets/scss/hero" as *;
-@use "@/assets/scss/clients" as *;
-@use "@/assets/scss/services" as *;
-@use "@/assets/scss/selectedwork" as *;
+@use "@/assets/scss/index/hero" as *;
+@use "@/assets/scss/index/clients" as *;
+@use "@/assets/scss/index/skills" as *;
+@use "@/assets/scss/index/selectedwork" as *;
 @use "@/assets/scss/cardwork" as *;
-@use "@/assets/scss/process" as *;
-@use "@/assets/scss/reviews" as *;
-@use "@/assets/scss/about-module" as *;
-@use "@/assets/scss/lets-talk" as *;
+@use "@/assets/scss/index/process" as *;
+@use "@/assets/scss/index/reviews" as *;
+@use "@/assets/scss/index/about-module" as *;
+@use "@/assets/scss/index/lets-talk" as *;
+
+@use "@/assets/scss/services/hero" as *;
+
+@use "@/assets/scss/services/stats" as *;
+@use "@/assets/scss/services/services" as *;
+
 @import "tailwindcss";
 
 body {

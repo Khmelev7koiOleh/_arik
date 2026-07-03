@@ -46,8 +46,9 @@ onMounted(() => {
   <div class="header">
     <div class="header__body">
       <div class="header__content">
-        <img class="header__logo" src="/assets/img/logo.svg" alt="Logo" />
-
+        <NuxtLink to="/">
+          <img class="header__logo" src="/assets/img/logo.svg" alt="Logo" />
+        </NuxtLink>
         <div
           class="header__nav nav-header"
           :class="{
@@ -55,11 +56,11 @@ onMounted(() => {
             'nav-header--no-transition': isResizing,
           }"
         >
-          <a href="#" class="nav-header__link">Services</a>
-          <a href="#" class="nav-header__link">Work</a>
-          <a href="#" class="nav-header__link">About</a>
-          <a href="#" class="nav-header__link">Blog</a>
-          <a href="#" class="nav-header__link">Pages</a>
+          <NuxtLink to="/services" class="nav-header__link">Services</NuxtLink>
+          <NuxtLink to="/work" class="nav-header__link">Work</NuxtLink>
+          <NuxtLink to="/about" class="nav-header__link">About</NuxtLink>
+          <NuxtLink to="/blog" class="nav-header__link">Blog</NuxtLink>
+          <NuxtLink to="/pages" class="nav-header__link">Pages</NuxtLink>
         </div>
         <div class="header__button-container">
           <a class="header__button button button--light">Lets talk</a>
