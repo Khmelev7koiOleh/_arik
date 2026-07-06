@@ -175,7 +175,7 @@ import Marquee from "~/components/Marquee.vue";
         </div>
       </div>
       <div class="lets-talk__content">
-        <div class="lets-talk__text-block text-block">
+        <div class="lets-talk__text-block text-block text-block--center">
           <p class="text-block__subtitle">Project in mind?</p>
           <h1 class="text-block__title">
             <span>Let’s make your </span>

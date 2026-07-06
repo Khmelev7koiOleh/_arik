@@ -1,0 +1,271 @@
+@use "@/assets/scss/style" as *;
+.about {
+  padding-top: clamp(30px, 10vw, 160px);
+  padding-bottom: clamp(40px, 10vw, 128px);
+  padding-inline: 10px;
+  &__container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column-reverse;
+
+    align-items: center;
+
+    @media (min-width: $mobile) {
+      align-items: start;
+      justify-content: center;
+      flex-direction: row;
+    }
+
+    column-gap: clamp(15px, 6vw, 80px);
+  }
+  &__content-container {
+    width: 100%;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (min-width: $mobile) {
+      width: 57.14%;
+    }
+  }
+  &__image-body {
+    display: flex;
+
+    justify-content: start;
+    align-items: start;
+    aspect-ratio: 520/589;
+    flex: 1 1 37.14%;
+    img {
+      height: 100%;
+
+      mix-blend-mode: lighten;
+      width: 100%;
+
+      object-fit: cover;
+    }
+  }
+  &__body {
+    flex: 1 1 57.14%;
+  }
+
+  &__text-block {
+    padding-top: clamp(15px, 6vw, 64px);
+    margin: 0px;
+  }
+  &__button-container {
+    padding-top: clamp(30px, 4vw, 64px);
+    display: flex;
+    align-items: center;
+    gap: 12.5px;
+
+    &--mobile {
+      display: flex;
+
+      @media (min-width: $mobile) {
+        display: none;
+      }
+    }
+    &--desktop {
+      display: none;
+
+      @media (min-width: $mobile) {
+        display: flex;
+      }
+    }
+  }
+  &__button__text {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 130%;
+
+    text-transform: uppercase;
+    color: $liteColor;
+  }
+}
+
+.content-about {
+  padding-top: clamp(30px, 9vw, 128px);
+
+  &__container {
+    border-radius: 2px;
+    padding: clamp(15px, 4vw, 48px);
+    background-color: $mutedColor;
+    border: 1px solid $grayColor;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 16px;
+  }
+  &__subtitle {
+    color: $mainColor;
+  }
+  &__title {
+    color: $liteColor;
+    text-transform: none;
+  }
+  &__text {
+    p {
+      font-family: "Chillax", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 0px;
+      line-height: 180%;
+      text-transform: none;
+
+      color: $mainColor;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__image {
+    border-radius: 2px;
+
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("@/assets/img/noise.png");
+    }
+  }
+}
+.social-content {
+  &__container {
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+
+    gap: 16px;
+    flex-wrap: wrap;
+    li {
+      flex: 1 1 200px;
+    }
+  }
+
+  &__list-item {
+    background-color: $mutedColor;
+    display: grid;
+
+    grid-template-columns: auto 1fr auto;
+    justify-content: space-between;
+    align-items: center;
+    color: $liteColor;
+    text-transform: uppercase;
+    font-family: "Satoshi", sans-serif;
+    font-size: 13px;
+    gap: 8px;
+    padding: 17.5px 24px;
+    border: 1px solid $grayColor;
+    border-radius: 2px;
+
+    svg {
+      fill: $liteColor;
+      transition: fill 0.8s ease-in-out;
+    }
+    transition:
+      background-color 0.5s ease-in-out,
+      color 0.8s ease-in-out,
+      scale 0.8s ease-in-out;
+
+    &:hover {
+      scale: 1.02;
+      background-color: $liteColor;
+      color: $fullColor;
+      svg {
+        fill: $fullColor;
+      }
+    }
+  }
+
+  &__icon-2 {
+    rotate: -135deg;
+    justify-self: end;
+  }
+}
+.awards-content {
+  &__container {
+    padding: clamp(15px, 4vw, 48px);
+    background-color: $mutedColor;
+    border: 1px solid $grayColor;
+    border-radius: 2px;
+  }
+  &__title {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    line-height: 160%;
+    text-transform: none;
+    text-transform: uppercase;
+    color: $mainColor;
+  }
+  &__table {
+    margin-top: 32px;
+    width: 100%;
+  }
+  &__table-row {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $grayColor;
+    }
+
+    td {
+      padding-block: 24px;
+    }
+    &:first-child {
+      td {
+        padding-top: 0px;
+      }
+    }
+    &:last-child {
+      td {
+        padding-bottom: 0px;
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+  &__table-label {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 140%;
+    text-transform: none;
+
+    color: $mainColor;
+  }
+
+  &__table-value {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    line-height: 160%;
+    text-transform: none;
+    text-transform: uppercase;
+    color: $mainColor;
+  }
+}
