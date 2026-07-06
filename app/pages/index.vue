@@ -46,7 +46,7 @@ const selectedWork = ref([
       <div class="hero__container">
         <img src="/assets/img/arik.png" alt="" class="hero__image" />
 
-        <div class="hero__text-block text-block">
+        <div class="hero__text-block text-block text-block--center">
           <h1 class="text-block__title text-block__title--xl">
             <span>Web Designer </span>
 

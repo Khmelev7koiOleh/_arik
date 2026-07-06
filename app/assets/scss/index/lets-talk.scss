@@ -16,7 +16,10 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 100px;
+      width: 50px;
+      @media (min-width: $mobile) {
+        width: 100px;
+      }
       z-index: 2;
       pointer-events: none;
     }
@@ -34,7 +37,11 @@
   &__line {
     width: 150%;
     background-color: $mutedGrayColor;
-    padding-block: 10px;
+    padding-block: clamp(
+      3px,
+      calc(3px + (10 - 3) * ((100vw - 400px) / (1400 - 400))),
+      10px
+    );
     border: 1px solid $grayColor;
   }
   &__line-item {

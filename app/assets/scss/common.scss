@@ -2,9 +2,34 @@
 
 .text-block {
   max-width: 1015px;
-  justify-self: center;
+  margin: 0 auto;
   color: $liteColor;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  justify-items: center;
+  align-items: center;
+
+  &--start {
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: $mobile) {
+      align-items: start;
+      text-align: start;
+    }
+  }
+
+  &--center {
+    align-items: center;
+    text-align: center;
+  }
+  &--end {
+    align-items: center;
+    @media (min-width: $mobile) {
+      align-items: end;
+    }
+  }
   &__subtitle {
     font-family: "Satoshi", sans-serif;
     font-weight: 400;
@@ -56,7 +81,7 @@
   }
   &__text {
     max-width: 600px;
-    margin: 0 auto;
+    text-wrap: balance;
     font-family: "Chillax", sans-serif;
     font-weight: 300;
     text-transform: none;
@@ -113,7 +138,7 @@
       font-size: clamp(45px, 14vw, 160px);
     }
     &--l {
-      font-size: clamp(36px, 5vw, 48px);
+      font-size: clamp(32px, 5vw, 48px);
     }
     &--m {
       font-size: clamp(16px, 7vw, 24px);
