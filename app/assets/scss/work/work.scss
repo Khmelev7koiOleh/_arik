@@ -1,0 +1,25 @@
+@use "@/assets/scss/style" as *;
+.work {
+  padding-top: clamp(30px, 10vw, 160px);
+  padding-bottom: clamp(40px, 10vw, 128px);
+  padding-inline: 10px;
+
+  &__container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  &__header {
+  }
+  &__body {
+    padding-top: clamp(30px, 10vw, 96px);
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    gap: 32px;
+  }
+}
+.header-work {
+}

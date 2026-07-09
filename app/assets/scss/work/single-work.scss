@@ -1,0 +1,183 @@
+@use "@/assets/scss/style" as *;
+.single-work {
+  padding-inline: 10px;
+
+  &__container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  &__header {
+    padding-bottom: clamp(30px, 12vw, 64px);
+  }
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    a {
+      text-decoration: none;
+      color: $liteColor;
+    }
+  }
+  &__button-text {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 130%;
+
+    text-transform: uppercase;
+    color: $liteColor;
+  }
+
+  &__body {
+  }
+}
+.info-single-work {
+  padding-block: clamp(30px, 12vw, 48px);
+
+  max-width: 1000px;
+  margin: 0 auto;
+  color: $liteColor;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(15px, 4vw, 32px);
+  justify-items: center;
+  align-items: center;
+  &__item {
+    flex: 1 1 200px;
+    justify-items: center;
+    border: 1px solid $grayColor;
+    border-radius: 2px;
+    padding: 16px;
+    background-color: $mutedColor;
+  }
+  &__label {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: $mainColor;
+    letter-spacing: 1.5px;
+    line-height: 160%;
+
+    text-transform: uppercase;
+  }
+
+  &__value {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: $liteColor;
+    letter-spacing: 1.5px;
+    line-height: 160%;
+
+    text-transform: uppercase;
+  }
+}
+.body-single-work {
+  &__container {
+    padding-top: clamp(30px, 12vw, 128px);
+    padding-bottom: clamp(30px, 12vw, 160px);
+    padding-inline: clamp(10px, 4vw, 64px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    @media (min-width: $tablet) {
+      display: flex;
+      flex-direction: row;
+      //   gap: clamp(15px, 6vw, 96px);
+      justify-content: space-between;
+
+      position: sticky;
+      top: 10px;
+      // gap: clamp(15px, 7vw, 96px);
+      gap: clamp(15px, calc(15px + 81 * ((100vw - 991.98px) / 408.02)), 96px);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1400/1050;
+
+    img {
+      width: 100%;
+    }
+  }
+  &__title-container {
+    max-width: 100%;
+    @media (min-width: $tablet) {
+      max-width: 652px;
+    }
+  }
+  &__label {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    line-height: 160%;
+
+    text-transform: uppercase;
+    color: $mainColor;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+  &__title {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 300;
+    font-size: clamp(32px, 4vw, 48px);
+    letter-spacing: 0px;
+    line-height: 110%;
+
+    text-transform: none;
+    color: $liteColor;
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: clamp(15px, 4vw, 32px);
+  }
+  &__item {
+    border: 1px solid $grayColor;
+    border-radius: 2px;
+    padding: clamp(15px, 4vw, 48px);
+    background-color: $mutedColor;
+  }
+}
+
+.item-single-work {
+  //   flex: 1 1 650px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 100%;
+  @media (min-width: $tablet) {
+    max-width: 652px;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  &__title {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 130%;
+
+    text-transform: none;
+    color: $liteColor;
+  }
+  &__text {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0px;
+    line-height: 180%;
+
+    text-transform: none;
+    color: $mainColor;
+  }
+}

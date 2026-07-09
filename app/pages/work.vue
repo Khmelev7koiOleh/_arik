@@ -1,25 +1,56 @@
-<template>
-  <div class="clients__container">
-    <h1 class="text-4xl font-bold mb-4 text-amber-100">Clients</h1>
-    <Marquee
-      direction="left"
-      :speed="120"
-      :space="40"
-      pause-on-hover
-      class="bg-white py-4"
-    >
-      <!-- Add as many items as you want – more = smoother -->
-      <img
-        v-for="i in 12"
-        :key="i"
-        :src="`/clients/${String(i).padStart(2, '0')}.svg`"
-        alt="Client"
-        class="h-10 w-auto"
-      />
-    </Marquee>
-  </div>
-</template>
-
 <script setup>
-import Marquee from "~/components/Marquee.vue";
+const work = ref([
+  {
+    id: 1,
+    img: "/works/01.jpg",
+    text: "Space",
+    link: "webdesign",
+  },
+  {
+    id: 2,
+    img: "/works/02.jpg",
+    text: "Nova",
+    link: "webdesign",
+  },
+  {
+    id: 3,
+    img: "/works/03.jpg",
+    text: "Sonic",
+    link: "webdesign",
+  },
+  {
+    id: 4,
+    img: "/works/04.jpg",
+    text: "Solar",
+    link: "webdesign",
+  },
+]);
 </script>
+<template>
+  <main>
+    <section class="work">
+      <div class="work__container">
+        <div class="work__header header-work">
+          <div class="header-work__text-block text-block text-block--center">
+            <h1 class="text-block__title">
+              <span>Work </span>
+            </h1>
+            <p class="text-block__text">
+              Premium web design, development, and SEO services to help your
+              business stand out.
+            </p>
+            <!-- <a class="text-block__button button button--down">
+          <img class="button__icon" src="/assets/img/button/arrow.svg" alt="" />
+          <p class="button__text">My services</p>
+        </a> -->
+          </div>
+        </div>
+
+        <div class="work__body">
+          <CardWork v-for="i in work" :key="i.id" :work="i" />
+        </div>
+      </div>
+    </section>
+  </main>
+  <Line />
+</template>

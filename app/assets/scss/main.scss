@@ -20,7 +20,8 @@
 @use "@/assets/scss/services/services" as *;
 
 @use "@/assets/scss/about/about" as *;
-
+@use "@/assets/scss/work/work" as *;
+@use "@/assets/scss/work/single-work" as *;
 @import "tailwindcss";
 
 body {
