@@ -15,7 +15,7 @@
     flex-direction: column-reverse;
     // justify-items: center;
     align-content: end;
-    flex: 0 0 57.14%;
+    flex: 0 0 100%;
 
     @media (min-width: $mobile) {
       justify-content: start;
@@ -26,7 +26,10 @@
   }
   &__body {
     display: flex;
-    justify-content: start;
+    justify-content: center;
+    @media (min-width: $mobile) {
+      justify-content: start;
+    }
   }
   &__content-container {
     width: 100%;
