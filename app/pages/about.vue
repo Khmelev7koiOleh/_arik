@@ -10,6 +10,9 @@ const scrollTo = () => {
 <template>
   <article class="about">
     <div class="about__container">
+      <div class="about__image-body">
+        <img src="/assets/img/arik.png" alt="" />
+      </div>
       <div class="about__header">
         <div
           @click="scrollTo()"
@@ -30,9 +33,6 @@ const scrollTo = () => {
             </svg>
           </div>
           <a href="#content__about" class="about__button__text">About me</a>
-        </div>
-        <div class="about__image-body">
-          <img src="/assets/img/arik.png" alt="" />
         </div>
 
         <div class="about__body">

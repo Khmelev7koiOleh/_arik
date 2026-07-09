@@ -90,8 +90,6 @@
       //   gap: clamp(15px, 6vw, 96px);
       justify-content: space-between;
 
-      position: sticky;
-      top: 10px;
       // gap: clamp(15px, 7vw, 96px);
       gap: clamp(15px, calc(15px + 81 * ((100vw - 991.98px) / 408.02)), 96px);
     }
@@ -109,6 +107,9 @@
     max-width: 100%;
     @media (min-width: $tablet) {
       max-width: 652px;
+      position: sticky;
+      top: 24px;
+      align-self: start;
     }
   }
   &__label {
