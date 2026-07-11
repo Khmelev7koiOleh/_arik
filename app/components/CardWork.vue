@@ -12,7 +12,16 @@ defineProps<{
 </script>
 
 <template>
-  <article class="card-work">
+  <NuxtLink
+    :to="{
+      path: `/work/${work.id}`,
+      query: {
+        img: work.img,
+        text: work.text,
+      },
+    }"
+    class="card-work"
+  >
     <div class="card-work__container">
       <div class="card-work__image">
         <img :src="work.img" alt="" />
@@ -25,7 +34,7 @@ defineProps<{
         }}</a>
       </div>
     </div>
-  </article>
+  </NuxtLink>
 </template>
 
 <style scoped>

@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref, watch, onMounted, onUnmounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
+
+const router = useRouter();
 const burgerOn = ref(false);
 watch(burgerOn, (open) => {
   document.body.classList.toggle("no-scroll", open);
@@ -40,13 +43,22 @@ onMounted(() => {
     mq.removeEventListener("change", handler);
   });
 });
+
+const goTo = (path: string) => {
+  if (burgerOn.value) {
+    burgerOn.value = false;
+    router.push(path);
+  } else {
+    router.push(path);
+  }
+};
 </script>
 
 <template>
   <div class="header">
     <div class="header__body">
       <div class="header__content">
-        <NuxtLink to="/">
+        <NuxtLink @click="goTo('/')">
           <img class="header__logo" src="/assets/img/logo.svg" alt="Logo" />
         </NuxtLink>
         <div
@@ -56,11 +68,21 @@ onMounted(() => {
             'nav-header--no-transition': isResizing,
           }"
         >
-          <NuxtLink to="/services" class="nav-header__link">Services</NuxtLink>
-          <NuxtLink to="/work" class="nav-header__link">Work</NuxtLink>
-          <NuxtLink to="/about" class="nav-header__link">About</NuxtLink>
-          <NuxtLink to="/blog" class="nav-header__link">Blog</NuxtLink>
-          <NuxtLink to="/pages" class="nav-header__link">Pages</NuxtLink>
+          <NuxtLink @click="goTo('/services')" class="nav-header__link"
+            >Services</NuxtLink
+          >
+          <NuxtLink @click="goTo('/work/work')" class="nav-header__link"
+            >Work</NuxtLink
+          >
+          <NuxtLink @click="goTo('/about')" class="nav-header__link"
+            >About</NuxtLink
+          >
+          <NuxtLink @click="goTo('/blog/blog')" class="nav-header__link"
+            >Blog</NuxtLink
+          >
+          <NuxtLink @click="goTo('/pages')" class="nav-header__link"
+            >Pages</NuxtLink
+          >
         </div>
         <div class="header__button-container">
           <a class="header__button button button--light">Lets talk</a>

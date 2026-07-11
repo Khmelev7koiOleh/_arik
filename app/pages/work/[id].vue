@@ -1,4 +1,6 @@
 <script setup>
+import { useRoute } from "vue-router";
+const route = useRoute();
 const work = ref([
   {
     id: 1,
@@ -21,7 +23,7 @@ const scrollTo = () => {
             class="header-single-work__text-block text-block text-block--center"
           >
             <h1 class="text-block__title">
-              <span>Space</span>
+              <span>{{ route.query.text.toString() }}</span>
             </h1>
             <p class="text-block__text">
               Modern and visually appealing website that reflected the client's
@@ -35,20 +37,22 @@ const scrollTo = () => {
 
           <div class="single-work__info info-single-work">
             <div class="info-single-work__item">
-              <div class="info-single-work__label">Client:</div>
-              <div class="info-single-work__value">Space</div>
+              <div class="info-single-work__label">Client</div>
+              <div class="info-single-work__value">
+                {{ route.query.text.toString() }}
+              </div>
             </div>
             <div class="info-single-work__item">
-              <div class="info-single-work__label">Services:</div>
-              <div class="info-single-work__value">Web Design</div>
+              <div class="info-single-work__label">Timeline</div>
+              <div class="info-single-work__value">3 Weeks</div>
             </div>
             <div class="info-single-work__item">
-              <div class="info-single-work__label">Services:</div>
-              <div class="info-single-work__value">Web Design</div>
+              <div class="info-single-work__label">Services</div>
+              <div class="info-single-work__value">Template</div>
             </div>
             <div class="info-single-work__item">
-              <div class="info-single-work__label">Services:</div>
-              <div class="info-single-work__value">Web Design</div>
+              <div class="info-single-work__label">Website</div>
+              <div class="info-single-work__value">gola.io</div>
             </div>
           </div>
 
@@ -75,7 +79,7 @@ const scrollTo = () => {
 
         <div class="single-work__body body-single-work">
           <div class="body-single-work__image">
-            <img src="/works/01.jpg" alt="" />
+            <img :src="route.query.img" alt="" />
           </div>
           <div ref="content" class="body-single-work__container">
             <div class="body-single-work__title-container">

@@ -58,7 +58,7 @@
 
       width: 46px;
       aspect-ratio: 1;
-
+      backdrop-filter: blur(4px);
       border: 1px solid $grayColor;
       border-radius: 50%;
       background: url("@/arrow.svg") center / auto no-repeat;
@@ -98,7 +98,6 @@
     text-transform: none;
   }
   &__text {
-    flex-grow: 1;
     font-family: "Chillax", sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -106,6 +105,7 @@
     line-height: 180%;
     text-transform: none;
     color: $mainColor;
+    flex-grow: 1;
   }
   &__category {
     font-family: "Chillax", sans-serif;
