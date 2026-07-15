@@ -170,7 +170,7 @@ const selectedWork = ref([
     <section class="process">
       <div class="process__container">
         <div class="process__text-block text-block">
-          <p class="text-block__subtitle">the process</p>
+          <div class="text-block__subtitle">the process</div>
           <h1 class="text-block__title text-block__title--l">
             <span>Your Website </span>
 

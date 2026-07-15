@@ -80,8 +80,8 @@ const goTo = (path: string) => {
           <NuxtLink @click="goTo('/blog/blog')" class="nav-header__link"
             >Blog</NuxtLink
           >
-          <NuxtLink @click="goTo('/pages')" class="nav-header__link"
-            >Pages</NuxtLink
+          <NuxtLink @click="goTo('/pricing')" class="nav-header__link"
+            >Pricing</NuxtLink
           >
         </div>
         <div class="header__button-container">

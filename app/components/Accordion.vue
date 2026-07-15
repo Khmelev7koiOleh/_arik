@@ -2,7 +2,13 @@
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const props = defineProps<{
+  wrapperClass?: string;
   listClass?: string;
+  titleClass?: string;
+
+  img?: string;
+  rotate?: string;
+  width?: string;
 }>();
 const list = ref<HTMLElement | null>(null);
 
@@ -43,9 +49,13 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="accordion__wrapper">
+  <div class="accordion__wrapper" :class="props.wrapperClass">
     <div ref="accordionwrapper" class="accordion-list">
-      <div @click="toggleSection()" class="accordion__title">
+      <div
+        @click="toggleSection()"
+        class="accordion__title"
+        :class="props.titleClass"
+      >
         <div
           class="accordion__title-text"
           :class="{ 'accordion__title-text--is-open': onOpen }"
@@ -81,9 +91,6 @@ onUnmounted(() => {
 }
 .accordion__list {
   width: 100%;
-  @media (max-width: 767.98px) {
-    text-align: center;
-  }
 
   max-height: 0;
   overflow: hidden;
@@ -99,10 +106,8 @@ onUnmounted(() => {
 .accordion__title {
   cursor: pointer;
   display: flex;
-  justify-content: center;
-  @media (max-width: 767.98px) {
-    text-align: center;
-  }
+  align-content: center;
+
   &:not(:last-child) {
     margin-bottom: 32px;
   }
@@ -110,28 +115,28 @@ onUnmounted(() => {
 
 .accordion__title-text {
   position: relative;
-
+  width: 100%;
   &::after {
     content: "";
     position: absolute;
-    transition: transform 0.5s ease-in-out;
+    transition: rotate 0.5s ease-in-out;
     top: 0;
     right: -20px;
-    background-image: url("/arrow.svg");
+    background-image: v-bind("'url(' + props.img + ')'");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 10px;
-    width: 10px;
+    aspect-ratio: 1/1;
+    width: v-bind(width);
+    rotate: v-bind(rotate);
+    margin-top: 10px;
 
-    margin-top: 8px;
-
-    transform: rotate(0deg);
+    rotate: 0deg;
   }
 }
 .accordion__title-text--is-open {
   &::after {
-    transform: rotate(-180deg);
+    rotate: v-bind(rotate);
   }
 }
 </style>
