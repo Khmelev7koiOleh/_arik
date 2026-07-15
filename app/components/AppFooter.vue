@@ -132,7 +132,14 @@ onUnmounted(() => {
           </ul>
         </div>
 
-        <Accordion v-if="isMobile" list-class="pages-footer__list">
+        <Accordion
+          v-if="isMobile"
+          list-class="pages-footer__list"
+          title-class="pages-footer__title"
+          img="/arrow.svg"
+          rotate="-180deg"
+          width="10px"
+        >
           <template #title>
             <h4 class="pages-footer__title" role="button">Pages</h4>
           </template>
@@ -179,7 +186,14 @@ onUnmounted(() => {
             <li class="cms-footer__link">Blog post</li>
           </ul>
         </div>
-        <Accordion v-if="isMobile" list-class="cms-footer__list">
+        <Accordion
+          v-if="isMobile"
+          list-class="cms-footer__list"
+          title-class="cms-footer__title"
+          img="/arrow.svg"
+          rotate="-180deg"
+          width="10px"
+        >
           <template #title>
             <h4 class="cms-footer__title" id="cms-title">CMS</h4>
           </template>
@@ -201,7 +215,14 @@ onUnmounted(() => {
             <li class="utility-footer__link">Changelog</li>
           </ul>
         </div>
-        <Accordion v-if="isMobile" list-class="utility-footer__list">
+        <Accordion
+          v-if="isMobile"
+          list-class="utility-footer__list"
+          title-class="utility-footer__title"
+          img="/arrow.svg"
+          rotate="-180deg"
+          width="10px"
+        >
           <template #title>
             <h4 class="utility-footer__title">Utility Pages</h4>
           </template>
