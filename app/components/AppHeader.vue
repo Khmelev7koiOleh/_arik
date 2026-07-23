@@ -68,19 +68,34 @@ const goTo = (path: string) => {
             'nav-header--no-transition': isResizing,
           }"
         >
-          <NuxtLink @click="goTo('/services')" class="nav-header__link"
+          <NuxtLink
+            @click="goTo('/services')"
+            class="nav-header__link"
+            :class="{ 'nav-header__link--active': $route.path === '/services' }"
             >Services</NuxtLink
           >
-          <NuxtLink @click="goTo('/work/work')" class="nav-header__link"
+          <NuxtLink
+            @click="goTo('/work/work')"
+            class="nav-header__link"
+            :class="{ 'nav-header__link--active': $route.path === '/work' }"
             >Work</NuxtLink
           >
-          <NuxtLink @click="goTo('/about')" class="nav-header__link"
+          <NuxtLink
+            @click="goTo('/about')"
+            class="nav-header__link"
+            :class="{ 'nav-header__link--active': $route.path === '/about' }"
             >About</NuxtLink
           >
-          <NuxtLink @click="goTo('/blog/blog')" class="nav-header__link"
+          <NuxtLink
+            @click="goTo('/blog/blog')"
+            class="nav-header__link"
+            :class="{ 'nav-header__link--active': $route.path === '/blog' }"
             >Blog</NuxtLink
           >
-          <NuxtLink @click="goTo('/pricing')" class="nav-header__link"
+          <NuxtLink
+            @click="goTo('/pricing')"
+            class="nav-header__link"
+            :class="{ 'nav-header__link--active': $route.path === '/pricing' }"
             >Pricing</NuxtLink
           >
         </div>

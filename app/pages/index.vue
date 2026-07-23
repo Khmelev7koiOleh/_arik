@@ -3,7 +3,36 @@ import { ref, computed } from "vue";
 import Marquee from "~/components/Marquee.vue";
 import Line from "~/components/Line.vue";
 import CardWork from "~/components/CardWork.vue";
+import { useParallax } from "~/composables/useParallax";
+import { useIntersection } from "@/composables/useIntersection";
+const { target: servicesTarget, isVisible: servicesVisible } =
+  useIntersection(0.1);
+const { target: selectedWorkTarget, isVisible: selectedWorkVisible } =
+  useIntersection(0.1);
+const { target: processTarget, isVisible: processVisible } =
+  useIntersection(0.01);
+const { target: reviewsTarget, isVisible: reviewsVisible } =
+  useIntersection(0.1);
+const { target: contentModuleTarget, isVisible: contentModuleVisible } =
+  useIntersection(0.2);
 
+const processSection1 = ref<HTMLElement | null>(null);
+const processSection2 = ref<HTMLElement | null>(null);
+const processSection3 = ref<HTMLElement | null>(null);
+const processSection4 = ref<HTMLElement | null>(null);
+const processSection5 = ref<HTMLElement | null>(null);
+const processItem1 = ref<HTMLElement | null>(null);
+const processItem2 = ref<HTMLElement | null>(null);
+const processItem3 = ref<HTMLElement | null>(null);
+const processItem4 = ref<HTMLElement | null>(null);
+const processItem5 = ref<HTMLElement | null>(null);
+useParallax(processSection1, processItem1, -0.6);
+useParallax(processSection2, processItem2, -0.6);
+useParallax(processSection3, processItem3, -0.6);
+useParallax(processSection4, processItem4, -0.6);
+useParallax(processSection5, processItem5, -0.6);
+
+const loaded = ref(false);
 const allicons = ref([
   "/clients/01.svg",
   "/clients/02.svg",
@@ -39,15 +68,29 @@ const selectedWork = ref([
     link: "webdesign",
   },
 ]);
+
+onMounted(() => {
+  requestAnimationFrame(() => {
+    loaded.value = true;
+  });
+});
 </script>
 <template>
   <main>
     <section class="hero">
       <div class="hero__container">
-        <img src="/assets/img/arik.png" alt="" class="hero__image" />
+        <img
+          src="/assets/img/arik.png"
+          alt=""
+          class="hero__image"
+          :class="{ 'hero__image--loaded': loaded }"
+        />
 
-        <div class="hero__text-block text-block text-block--center">
-          <h1 class="text-block__title text-block__title--xl">
+        <div
+          class="hero__text-block text-block text-block--center"
+          :class="{ 'hero__text-block--loaded': loaded }"
+        >
+          <h1 class="text-block__title text-block__title--160">
             <span>Web Designer </span>
 
             <span> & Developer </span>
@@ -74,9 +117,12 @@ const selectedWork = ref([
       </div>
     </section>
 
-    <section class="skills">
-      <div class="skills__container">
-        <article class="skills__item item-skills">
+    <section ref="servicesSection" class="skills">
+      <div ref="servicesTarget" class="skills__container">
+        <article
+          class="skills__item item-skills show-animation"
+          :class="{ 'is-show': servicesVisible }"
+        >
           <p class="item-skills__index text-font__subtitle">01</p>
           <h4 class="item-skills__title text-font__title">Web design</h4>
           <p class="item-skills__text text-font__text">
@@ -103,7 +149,10 @@ const selectedWork = ref([
           </div>
         </article>
 
-        <article class="skills__item item-skills">
+        <article
+          class="skills__item item-skills show-animation"
+          :class="{ 'is-show': servicesVisible }"
+        >
           <p class="item-skills__index text-font__subtitle">02</p>
           <h4 class="item-skills__title text-font__title">Development</h4>
           <p class="item-skills__text text-font__text">
@@ -129,7 +178,10 @@ const selectedWork = ref([
           </div>
         </article>
 
-        <article class="skills__item item-skills">
+        <article
+          class="skills__item item-skills show-animation"
+          :class="{ 'is-show': servicesVisible }"
+        >
           <p class="item-skills__index text-font__subtitle">03</p>
           <h4 class="item-skills__title text-font__title">Content & Seo</h4>
           <p class="item-skills__text text-font__text">
@@ -157,7 +209,11 @@ const selectedWork = ref([
       </div>
     </section>
 
-    <section class="selectedwork">
+    <section
+      ref="selectedWorkTarget"
+      class="selectedwork show-animation"
+      :class="{ 'is-show': selectedWorkVisible }"
+    >
       <div class="selectedwork__container">
         <WidgetHeader titleone="Selected" titletwo="Work" link="See all" />
 
@@ -168,10 +224,14 @@ const selectedWork = ref([
     </section>
 
     <section class="process">
-      <div class="process__container">
+      <div
+        ref="processTarget"
+        class="process__container show-animation"
+        :class="{ 'is-show': processVisible }"
+      >
         <div class="process__text-block text-block">
           <div class="text-block__subtitle">the process</div>
-          <h1 class="text-block__title text-block__title--l">
+          <h1 class="text-block__title text-block__title--128">
             <span>Your Website </span>
 
             <span> in 5 steps </span>
@@ -203,8 +263,8 @@ const selectedWork = ref([
             </div>
           </div>
           <div class="items-process__body">
-            <div class="items-process__item item-process">
-              <div class="item-process__body">
+            <div ref="processSection1" class="items-process__item item-process">
+              <div ref="processItem1" class="item-process__body">
                 <div class="item-process__time">2 hours</div>
                 <div class="item-process__subtitle text-font__subtitle">
                   Do we match?
@@ -242,8 +302,8 @@ const selectedWork = ref([
               </div>
             </div>
 
-            <div class="items-process__item item-process">
-              <div class="item-process__body">
+            <div ref="processSection2" class="items-process__item item-process">
+              <div ref="processItem2" class="item-process__body">
                 <div class="item-process__time">1 week</div>
                 <div class="item-process__subtitle text-font__subtitle">
                   lorem ipsum
@@ -281,8 +341,8 @@ const selectedWork = ref([
                 </ul>
               </div>
             </div>
-            <div class="items-process__item item-process">
-              <div class="item-process__body">
+            <div ref="processSection3" class="items-process__item item-process">
+              <div ref="processItem3" class="item-process__body">
                 <div class="item-process__time">1 week</div>
                 <div class="item-process__subtitle text-font__subtitle">
                   SOme MAgic
@@ -315,8 +375,8 @@ const selectedWork = ref([
                 </ul>
               </div>
             </div>
-            <div class="items-process__item item-process">
-              <div class="item-process__body">
+            <div ref="processSection4" class="items-process__item item-process">
+              <div ref="processItem4" class="item-process__body">
                 <div class="item-process__time">2 weeks</div>
                 <div class="item-process__subtitle text-font__subtitle">
                   More Magic
@@ -354,8 +414,8 @@ const selectedWork = ref([
                 </ul>
               </div>
             </div>
-            <div class="items-process__item item-process">
-              <div class="item-process__body">
+            <div ref="processSection5" class="items-process__item item-process">
+              <div ref="processItem5" class="item-process__body">
                 <div class="item-process__time">2 hours</div>
                 <div class="item-process__subtitle text-font__subtitle">
                   ready to go
@@ -400,10 +460,14 @@ const selectedWork = ref([
     </section>
     <!-- <img src="/assets/img/clients/01.svg" alt="" /> -->
     <section class="reviews">
-      <div class="reviews__container">
+      <div
+        ref="reviewsTarget"
+        class="reviews__container show-animation"
+        :class="{ 'is-show': reviewsVisible }"
+      >
         <div class="reviews__text-block text-block">
           <!-- <p class="text-block__subtitle">the process</p> -->
-          <h1 class="text-block__title text-block__title--m">
+          <h1 class="text-block__title text-block__title--96">
             <span>What my </span>
 
             <span> clients say</span>
@@ -767,10 +831,14 @@ const selectedWork = ref([
             <!-- <span>Arik Andersson</span> <span>Arik Andersson</span> -->
           </div>
         </div>
-        <div class="about-module__content content-module">
+        <div
+          ref="contentModuleTarget"
+          class="about-module__content content-module show-animation"
+          :class="{ 'is-show': contentModuleVisible }"
+        >
           <div class="content-module__container">
             <div
-              class="content-module__title text-block__title text-block__title--s"
+              class="content-module__title text-block__title text-block__title--48"
             >
               <span> A website that leaves</span>
               <span>a lasting impression!</span>

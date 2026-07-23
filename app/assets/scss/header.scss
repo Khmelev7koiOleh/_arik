@@ -192,6 +192,18 @@
         }
       }
     }
+    &--active {
+      color: $liteColor;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.5px;
+        background-color: $liteColor;
+      }
+    }
   }
 
   &--no-transition {

@@ -25,14 +25,26 @@ const work = ref([
     link: "webdesign",
   },
 ]);
+
+const loaded = ref(false);
+onMounted(() => {
+  requestAnimationFrame(() => {
+    loaded.value = true;
+  });
+
+  // window.addEventListener("scroll", handleScroll, { passive: true });
+});
 </script>
 <template>
   <main>
     <section class="work">
       <div class="work__container">
         <div class="work__header header-work">
-          <div class="header-work__text-block text-block text-block--center">
-            <h1 class="text-block__title">
+          <div
+            class="header-work__text-block text-block text-block--center loaded-animation"
+            :class="{ 'is-loaded': loaded }"
+          >
+            <h1 class="text-block__title text-block__title--128">
               <span>Work </span>
             </h1>
             <p class="text-block__text">

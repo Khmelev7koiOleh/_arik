@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import Marquee from "~/components/Marquee.vue";
+
+import { useIntersection } from "@/composables/useIntersection";
+const { target: letsTalkTarget, isVisible: letsTalkVisible } =
+  useIntersection(0.1);
 </script>
 
 <template>
@@ -174,10 +178,14 @@ import Marquee from "~/components/Marquee.vue";
           </Marquee>
         </div>
       </div>
-      <div class="lets-talk__content">
+      <div
+        ref="letsTalkTarget"
+        class="lets-talk__content show-animation"
+        :class="{ 'is-show': letsTalkVisible }"
+      >
         <div class="lets-talk__text-block text-block text-block--center">
           <p class="text-block__subtitle">Project in mind?</p>
-          <h1 class="text-block__title">
+          <h1 class="text-block__title text-block__title--128">
             <span>Let’s make your </span>
 
             <span> Website shine </span>

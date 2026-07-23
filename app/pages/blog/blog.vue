@@ -74,14 +74,26 @@ const blogPosts = [
     category: "Web Design",
   },
 ];
+
+const loaded = ref(false);
+onMounted(() => {
+  requestAnimationFrame(() => {
+    loaded.value = true;
+  });
+
+  // window.addEventListener("scroll", handleScroll, { passive: true });
+});
 </script>
 <template>
   <main>
     <section class="blog">
       <div class="blog__container">
         <div class="blog__hero hero-blog">
-          <div class="hero-blog__text-block text-block text-block--center">
-            <h1 class="text-block__title">
+          <div
+            class="hero-blog__text-block text-block text-block--center loaded-animation"
+            :class="{ 'is-loaded': loaded }"
+          >
+            <h1 class="text-block__title text-block__title--128">
               <span>Blog </span>
             </h1>
             <p class="text-block__text">

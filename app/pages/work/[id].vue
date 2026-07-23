@@ -13,6 +13,12 @@ const content = ref(null);
 const scrollTo = () => {
   content.value.scrollIntoView({ behavior: "smooth" });
 };
+const loaded = ref(false);
+onMounted(() => {
+  requestAnimationFrame(() => {
+    loaded.value = true;
+  });
+});
 </script>
 <template>
   <main>
@@ -20,9 +26,10 @@ const scrollTo = () => {
       <div class="single-work__container">
         <div class="single-work__header header-single-work">
           <div
-            class="header-single-work__text-block text-block text-block--center"
+            class="header-single-work__text-block text-block text-block--center loaded-animation"
+            :class="{ 'is-loaded': loaded }"
           >
-            <h1 class="text-block__title">
+            <h1 class="text-block__title text-block__title--128">
               <span>{{ route.query.text.toString() }}</span>
             </h1>
             <p class="text-block__text">
