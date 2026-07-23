@@ -26,11 +26,21 @@
     object-fit: contain;
 
     aspect-ratio: 719/814;
-
+    opacity: 0;
+    transition: all 1.5s ease;
+    &--loaded {
+      opacity: 1;
+    }
     // transform: translateY(-12%);
   }
   &__text-block {
-    transform: translateY(-40%);
+    transform: translateY(calc(-40% + 60px));
+    opacity: 0;
+    transition: all 1.5s ease;
+    &--loaded {
+      opacity: 1;
+      transform: translateY(-40%);
+    }
   }
   // margin: 10px 10px;
   // background-color: #b2a1a1; /* Light gray background */

@@ -5,6 +5,15 @@ const content__about = ref(null);
 const scrollTo = () => {
   content__about.value.scrollIntoView({ behavior: "smooth" });
 };
+
+const loaded = ref(false);
+onMounted(() => {
+  requestAnimationFrame(() => {
+    loaded.value = true;
+  });
+
+  // window.addEventListener("scroll", handleScroll, { passive: true });
+});
 </script>
 
 <template>
@@ -15,8 +24,11 @@ const scrollTo = () => {
       </div>
       <div class="about__header">
         <div class="about__body">
-          <div class="about__text-block text-block text-block--start">
-            <h1 class="text-block__title text-block__title">
+          <div
+            class="about__text-block text-block text-block--start loaded-animation"
+            :class="{ 'is-loaded': loaded }"
+          >
+            <h1 class="text-block__title text-block__title--128">
               <span>Arik </span>
 
               <span> Andersson </span>

@@ -82,14 +82,24 @@ const blogPosts = [
     category: "Web Design",
   },
 ];
+
+const loaded = ref(false);
+onMounted(() => {
+  requestAnimationFrame(() => {
+    loaded.value = true;
+  });
+});
 </script>
 <template>
   <main>
     <section class="blogpage">
       <div class="blogpage__container">
         <div class="blogpage__hero hero-blogpage">
-          <div class="hero-blog__text-block text-block text-block--center">
-            <h1 class="text-block__title text-block__title--xm">
+          <div
+            class="hero-blog__text-block text-block text-block--center loaded-animation"
+            :class="{ 'is-loaded': loaded }"
+          >
+            <h1 class="text-block__title text-block__title--80">
               <span>{{ route.query.title?.toString() }}</span>
             </h1>
             <p class="text-block__text text-block__text--s">

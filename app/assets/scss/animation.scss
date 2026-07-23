@@ -1,0 +1,22 @@
+.loaded-animation {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: transform 1.5s ease;
+
+  &.is-loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.show-animation {
+  opacity: 0;
+  transform: translateY(100px);
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
+
+  &.is-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
