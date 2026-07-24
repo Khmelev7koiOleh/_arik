@@ -1,30 +1,36 @@
-import { ref, onMounted, onBeforeUnmount, type Ref } from "vue";
+import { onMounted, onBeforeUnmount, type Ref } from "vue";
+import type { ScrollTrigger as ScrollTriggerType } from "gsap/ScrollTrigger";
 
 export const useParallax = (
   sectionRef: Ref<HTMLElement | null>,
   bgRef: Ref<HTMLElement | null>,
   speed: number = 0.5,
 ) => {
-  let scrollTrigger: any = null;
-  let gsap: any = null;
-  let ScrollTrigger: any = null;
+  let scrollTrigger: ScrollTriggerType | null = null;
+
+  let gsapInstance: typeof import("gsap").default | null = null;
+
+  let ScrollTriggerInstance:
+    | typeof import("gsap/ScrollTrigger").ScrollTrigger
+    | null = null;
 
   const init = async () => {
     const gsapModule = await import("gsap");
     const ScrollTriggerModule = await import("gsap/ScrollTrigger");
 
-    gsap = gsapModule.default;
-    ScrollTrigger = ScrollTriggerModule.ScrollTrigger;
+    gsapInstance = gsapModule.default;
+    ScrollTriggerInstance = ScrollTriggerModule.ScrollTrigger;
 
-    gsap.registerPlugin(ScrollTrigger);
+    gsapInstance.registerPlugin(ScrollTriggerInstance);
 
     if (!sectionRef.value || !bgRef.value) return;
 
     const section = sectionRef.value;
     const bg = bgRef.value;
+
     const distance = section.clientHeight * speed;
 
-    const anim = gsap.fromTo(
+    const anim = gsapInstance.fromTo(
       bg,
       { y: -distance / 2 },
       {
@@ -39,6 +45,7 @@ export const useParallax = (
         },
       },
     );
+
     scrollTrigger = anim.scrollTrigger;
   };
 
@@ -47,15 +54,16 @@ export const useParallax = (
   });
 
   onBeforeUnmount(() => {
-    if (scrollTrigger) {
-      scrollTrigger.kill();
-    }
-    if (gsap && ScrollTrigger) {
-      ScrollTrigger.getAll().forEach((trigger: any) => {
-        if (trigger.vars.trigger === sectionRef.value) trigger.kill();
-      });
-    }
+    scrollTrigger?.kill();
+
+    ScrollTriggerInstance?.getAll().forEach((trigger) => {
+      if (trigger.vars.trigger === sectionRef.value) {
+        trigger.kill();
+      }
+    });
   });
 
-  return { refresh: () => ScrollTrigger?.refresh() };
+  return {
+    refresh: () => ScrollTriggerInstance?.refresh(),
+  };
 };

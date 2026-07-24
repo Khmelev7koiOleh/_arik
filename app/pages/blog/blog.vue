@@ -124,6 +124,7 @@ onMounted(() => {
         </div>
       </div>
     </section>
+
+    <LineComponent />
   </main>
-  <Line />
 </template>

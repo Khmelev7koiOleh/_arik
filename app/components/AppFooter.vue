@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
-import Accordion from "./Accordion.vue";
+import Accordion from "./AccordionComponent.vue";
 
 const isMobile = ref(false);
 
@@ -99,8 +99,8 @@ onUnmounted(() => {
           </h4>
 
           <ul
-            class="pages-footer__list"
             id="pages-list"
+            class="pages-footer__list"
             aria-label="Pages navigation"
           >
             <li class="pages-footer__link"><a href="/">Home</a></li>
@@ -177,8 +177,8 @@ onUnmounted(() => {
           <h4 class="cms-footer__title">CMS</h4>
 
           <ul
-            class="cms-footer__list"
             id="pages-list"
+            class="cms-footer__list"
             aria-label="Pages navigation"
           >
             <li class="cms-footer__link">Work</li>
@@ -197,7 +197,7 @@ onUnmounted(() => {
           width="10px"
         >
           <template #title>
-            <h4 class="cms-footer__title" id="cms-title">CMS</h4>
+            <h4 id="cms-title" class="cms-footer__title">CMS</h4>
           </template>
           <template #list>
             <li class="cms-footer__link">Work</li>
@@ -245,8 +245,8 @@ onUnmounted(() => {
         </div>
         <div class="footer__to-top">
           <button
-            @click="scrollToTop()"
             class="footer__button-container button button--tr button--up"
+            @click="scrollToTop()"
           >
             <!-- span because <a> tag with href does not slide but teleports -->
             <span class="footer__button">to top</span>

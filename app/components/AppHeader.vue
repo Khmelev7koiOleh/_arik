@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch, onMounted, onUnmounted } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 const burgerOn = ref(false);
@@ -10,14 +10,14 @@ watch(burgerOn, (open) => {
 
 const isResizing = ref(false);
 
-let timeout: any;
+let timeout: ReturnType<typeof setTimeout>;
 
-let lastIsMobile = null as any;
+let lastIsMobile: boolean | null = null;
 
 onMounted(() => {
   const mq = window.matchMedia("(max-width: 767.98px)");
 
-  const handler = (e: any) => {
+  const handler = (e: MediaQueryListEvent) => {
     const isMobile = e.matches;
 
     // only trigger when crossing breakpoint
@@ -69,37 +69,37 @@ const goTo = (path: string) => {
           }"
         >
           <NuxtLink
-            @click="goTo('/services')"
             class="nav-header__link"
             :class="{ 'nav-header__link--active': $route.path === '/services' }"
+            @click="goTo('/services')"
             >Services</NuxtLink
           >
           <NuxtLink
-            @click="goTo('/work/work')"
             class="nav-header__link"
             :class="{
               'nav-header__link--active': $route.path.startsWith('/work'),
             }"
+            @click="goTo('/work/work')"
             >Work</NuxtLink
           >
           <NuxtLink
-            @click="goTo('/about')"
             class="nav-header__link"
             :class="{ 'nav-header__link--active': $route.path === '/about' }"
+            @click="goTo('/about')"
             >About</NuxtLink
           >
           <NuxtLink
-            @click="goTo('/blog/blog')"
             class="nav-header__link"
             :class="{
               'nav-header__link--active': $route.path.startsWith('/blog'),
             }"
+            @click="goTo('/blog/blog')"
             >Blog</NuxtLink
           >
           <NuxtLink
-            @click="goTo('/pricing')"
             class="nav-header__link"
             :class="{ 'nav-header__link--active': $route.path === '/pricing' }"
+            @click="goTo('/pricing')"
             >Pricing</NuxtLink
           >
         </div>

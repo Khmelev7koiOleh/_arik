@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import Marquee from "~/components/Marquee.vue";
-import Line from "~/components/Line.vue";
+import { ref } from "vue";
+import MarqueeComponent from "~/components/MarqueeComponent.vue";
+
 import CardWork from "~/components/CardWork.vue";
 import { useParallax } from "~/composables/useParallax";
 import { useIntersection } from "@/composables/useIntersection";
+
 const { target: servicesTarget, isVisible: servicesVisible } =
   useIntersection(0.15);
 const { target: selectedWorkTarget, isVisible: selectedWorkVisible } =
@@ -80,7 +81,7 @@ onMounted(() => {
     <section class="hero">
       <div class="hero__container">
         <img
-          src="/assets/img/arik.png"
+          src="/arik.png"
           alt=""
           class="hero__image"
           :class="{ 'hero__image--loaded': loaded }"
@@ -109,11 +110,16 @@ onMounted(() => {
 
     <section class="clients">
       <div class="clients__container">
-        <Marquee direction="left" :speed="60" :space="40" pause-on-hover>
+        <MarqueeComponent
+          direction="left"
+          :speed="60"
+          :space="40"
+          pause-on-hover
+        >
           <div v-for="(icon, i) in duplicatedIcons" :key="i">
             <img :src="icon" alt="Icon" class="h-60 w-auto clients__item" />
           </div>
-        </Marquee>
+        </MarqueeComponent>
       </div>
     </section>
 
@@ -725,7 +731,7 @@ onMounted(() => {
             <img class="about-module__image" src="/arik.png" alt="" />
           </div>
           <div class="about-module__text">
-            <Marquee
+            <MarqueeComponent
               direction="left"
               :speed="15"
               :space="75"
@@ -749,7 +755,7 @@ onMounted(() => {
               <div class="about-module__name">
                 <span>Arik </span><span>Andersson</span>
               </div>
-            </Marquee>
+            </MarqueeComponent>
             <!-- <span>Arik Andersson</span> <span>Arik Andersson</span> -->
           </div>
         </div>
@@ -832,12 +838,8 @@ onMounted(() => {
         </div>
       </div>
     </section>
+    <LineComponent />
   </main>
-
-  <Line />
-
-  <!-- <Button />
-  <ButtonLight /> -->
 </template>
 
 <style scoped></style>

@@ -222,24 +222,31 @@
     }
   }
   &__list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 3vw, 20px);
   }
   &__list-item {
+    display: flex;
+    align-items: flex-start;
+
     font-family: "Chillax", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    letter-spacing: 0px;
     line-height: 150%;
-    text-transform: none;
     color: $liteColor;
+
     &::before {
       content: "";
-      display: inline-block;
+      flex-shrink: 0;
+
       width: 4px;
       height: 4px;
       border-radius: 50%;
       background-color: $mainColor;
+
+      margin-top: 10px;
       margin-right: 10px;
-      margin-bottom: 2px;
     }
   }
   &:last-child::before {

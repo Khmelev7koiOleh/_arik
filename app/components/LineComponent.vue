@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import Marquee from "~/components/Marquee.vue";
+import MarqueeComponent from "~/components/MarqueeComponent.vue";
 
 import { useIntersection } from "@/composables/useIntersection";
 const { target: letsTalkTarget, isVisible: letsTalkVisible } =
@@ -12,7 +11,7 @@ const { target: letsTalkTarget, isVisible: letsTalkVisible } =
     <div class="lets-talk__container">
       <div class="lets-talk__line-gradient">
         <div class="lets-talk__line">
-          <Marquee
+          <MarqueeComponent
             direction="left"
             :speed="10"
             :space="22"
@@ -175,7 +174,7 @@ const { target: letsTalkTarget, isVisible: letsTalkVisible } =
             >
               <span>+++</span>
             </div>
-          </Marquee>
+          </MarqueeComponent>
         </div>
       </div>
       <div

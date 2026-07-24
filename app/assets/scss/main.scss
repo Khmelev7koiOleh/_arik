@@ -27,8 +27,6 @@
 @use "@/assets/scss/pricing/pricing" as *;
 @use "@/assets/scss/animation" as *;
 
-@import "tailwindcss";
-
 body {
   background-color: $bgColor;
 }

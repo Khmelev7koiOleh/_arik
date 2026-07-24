@@ -123,6 +123,10 @@
       calc(24px + (128 - 24) * ((100vw - 400px) / (1400 - 400))),
       128px
     );
+
+    span {
+      font-weight: 300;
+    }
   }
 }
 .content-module {
@@ -140,22 +144,7 @@
       justify-content: space-between;
     }
   }
-  &__title {
-    // font-family: "Satoshi", sans-serif;
-    // font-weight: 300;
-    // font-size: 24px;
-    // letter-spacing: 1px;
-    // line-height: 130%;
-    // color: $mainColor;
-    // text-transform: uppercase;
-    // font-size: clamp(36px, 5vw, 48px);
 
-    // span {
-    //   &:nth-child(1) {
-    //     color: $liteColor;
-    //   }
-    // }
-  }
   &__text-body {
     display: flex;
     flex-direction: column;
@@ -175,6 +164,7 @@
     //   margin-bottom: 32px;
     // }
   }
+
   &__text {
     color: $mainColor;
   }

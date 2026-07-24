@@ -1,14 +1,6 @@
 <script setup>
 import { useRoute } from "vue-router";
 const route = useRoute();
-const work = ref([
-  {
-    id: 1,
-    img: "/works/01.jpg",
-    text: "Space",
-    link: "webdesign",
-  },
-]);
 const content = ref(null);
 const scrollTo = () => {
   content.value.scrollIntoView({ behavior: "smooth" });
@@ -63,7 +55,7 @@ onMounted(() => {
             </div>
           </div>
 
-          <div @click="scrollTo()" class="single-work__button-container">
+          <div class="single-work__button-container" @click="scrollTo()">
             <div class="button--default button--default--hover">
               <svg
                 width="13"
@@ -133,6 +125,7 @@ onMounted(() => {
         </div>
       </div>
     </section>
+
+    <LineComponent />
   </main>
-  <Line />
 </template>

@@ -49,12 +49,11 @@ const measureItems = () => {
   if (!children || children.length === 0) return false;
   const axis = getAxis();
   const sizes = [];
-  let total = 0;
+
   for (let i = 0; i < children.length; i++) {
     const size =
       axis === "x" ? children[i].offsetWidth : children[i].offsetHeight;
     sizes.push(size + props.space);
-    total += size + props.space;
   }
   itemWidths = sizes;
   return true;
@@ -208,7 +207,7 @@ onMounted(() => {
   // Apply will-change to each child for GPU layers
   const children = track.value?.children;
   if (children) {
-    for (let child of children) {
+    for (const child of children) {
       child.style.willChange = "transform";
     }
   }

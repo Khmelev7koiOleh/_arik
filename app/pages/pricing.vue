@@ -1,31 +1,4 @@
-<script setup>
-const work = ref([
-  {
-    id: 1,
-    img: "/works/01.jpg",
-    text: "Space",
-    link: "webdesign",
-  },
-  {
-    id: 2,
-    img: "/works/02.jpg",
-    text: "Nova",
-    link: "webdesign",
-  },
-  {
-    id: 3,
-    img: "/works/03.jpg",
-    text: "Sonic",
-    link: "webdesign",
-  },
-  {
-    id: 4,
-    img: "/works/04.jpg",
-    text: "Solar",
-    link: "webdesign",
-  },
-]);
-</script>
+<script setup></script>
 <template>
   <main>
     <section class="pricing">
@@ -115,7 +88,7 @@ const work = ref([
             </div>
 
             <div class="faq-pricing__punkts punkts-pricing">
-              <Accordion
+              <AccordionComponent
                 wrapper-class="punkts-pricing__wrapper"
                 list-class="punkts-pricing__list"
                 title-class="punkts-pricing__title"
@@ -145,8 +118,8 @@ const work = ref([
                     deliver projects in a timely and efficient manner.
                   </li>
                 </template>
-              </Accordion>
-              <Accordion
+              </AccordionComponent>
+              <AccordionComponent
                 wrapper-class="punkts-pricing__wrapper"
                 list-class="punkts-pricing__list"
                 title-class="punkts-pricing__title"
@@ -170,8 +143,8 @@ const work = ref([
                     deliver projects in a timely and efficient manner.
                   </li>
                 </template>
-              </Accordion>
-              <Accordion
+              </AccordionComponent>
+              <AccordionComponent
                 wrapper-class="punkts-pricing__wrapper"
                 list-class="punkts-pricing__list"
                 title-class="punkts-pricing__title"
@@ -193,8 +166,8 @@ const work = ref([
                     align with their brand identity.
                   </li>
                 </template>
-              </Accordion>
-              <Accordion
+              </AccordionComponent>
+              <AccordionComponent
                 wrapper-class="punkts-pricing__wrapper"
                 list-class="punkts-pricing__list"
                 title-class="punkts-pricing__title"
@@ -215,12 +188,13 @@ const work = ref([
                     align with their brand identity.
                   </li>
                 </template>
-              </Accordion>
+              </AccordionComponent>
             </div>
           </div>
         </article>
       </div>
     </section>
+
+    <LineComponent />
   </main>
-  <Line />
 </template>

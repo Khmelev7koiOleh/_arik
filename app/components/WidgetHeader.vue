@@ -1,5 +1,18 @@
 <script setup lang="ts">
-defineProps(["titleone", "titletwo", "link"]);
+defineProps({
+  titleone: {
+    type: String,
+    required: true,
+  },
+  titletwo: {
+    type: String,
+    required: true,
+  },
+  link: {
+    type: String,
+    required: true,
+  },
+});
 </script>
 <template>
   <div class="header-work">

@@ -106,8 +106,8 @@ onMounted(() => {
             </p>
 
             <div
-              @click="scrollTo()"
               class="hero-blogpage__button-container hero-blogpage__button-container"
+              @click="scrollTo()"
             >
               <div class="button--default button--default--hover">
                 <svg
@@ -352,6 +352,7 @@ onMounted(() => {
         </div>
       </div>
     </section>
+
+    <LineComponent />
   </main>
-  <Line />
 </template>

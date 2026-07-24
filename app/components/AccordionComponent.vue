@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const props = defineProps<{
   wrapperClass?: string;
@@ -13,9 +13,7 @@ const props = defineProps<{
 const list = ref<HTMLElement | null>(null);
 
 const isMobile = ref(false);
-const smth = (item: any) => {
-  console.log(item);
-};
+
 const onOpen = ref(false);
 const toggleSection = () => {
   onOpen.value = !onOpen.value;
@@ -52,9 +50,9 @@ onUnmounted(() => {
   <div class="accordion__wrapper" :class="props.wrapperClass">
     <div ref="accordionwrapper" class="accordion-list">
       <div
-        @click="toggleSection()"
         class="accordion__title"
         :class="props.titleClass"
+        @click="toggleSection()"
       >
         <div
           class="accordion__title-text"
@@ -98,9 +96,11 @@ onUnmounted(() => {
 
   transition:
     max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-top 0.8s ease,
     opacity 0.8s ease;
 }
 .accordion__list--is-open {
+  margin-top: 16px;
   opacity: 1;
 }
 .accordion__title {
