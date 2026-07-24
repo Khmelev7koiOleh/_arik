@@ -25,24 +25,12 @@ const work = ref([
     link: "webdesign",
   },
 ]);
-
-const loaded = ref(false);
-onMounted(() => {
-  requestAnimationFrame(() => {
-    loaded.value = true;
-  });
-
-  // window.addEventListener("scroll", handleScroll, { passive: true });
-});
 </script>
 <template>
   <main>
     <section class="pricing">
       <div class="pricing__container">
-        <div
-          class="pricing__text-block text-block text-block--center loaded-animation"
-          :class="{ 'is-loaded': loaded }"
-        >
+        <div class="pricing__text-block text-block text-block--center">
           <div class="text-block__subtitle">pricing</div>
           <h1 class="text-block__title text-block__title--80">
             <span> Experience the Power of </span>
@@ -131,6 +119,7 @@ onMounted(() => {
                 wrapper-class="punkts-pricing__wrapper"
                 list-class="punkts-pricing__list"
                 title-class="punkts-pricing__title"
+                flex="1"
                 img="/plus.svg"
                 rotate="45deg"
                 width="20px"
@@ -161,6 +150,7 @@ onMounted(() => {
                 wrapper-class="punkts-pricing__wrapper"
                 list-class="punkts-pricing__list"
                 title-class="punkts-pricing__title"
+                flex="1"
                 img="/plus.svg"
                 rotate="45deg"
                 width="20px"
@@ -185,6 +175,7 @@ onMounted(() => {
                 wrapper-class="punkts-pricing__wrapper"
                 list-class="punkts-pricing__list"
                 title-class="punkts-pricing__title"
+                flex="1"
                 img="/plus.svg"
                 rotate="45deg"
                 width="20px"
@@ -207,6 +198,7 @@ onMounted(() => {
                 wrapper-class="punkts-pricing__wrapper"
                 list-class="punkts-pricing__list"
                 title-class="punkts-pricing__title"
+                flex="1"
                 img="/plus.svg"
                 rotate="45deg"
                 width="20px"

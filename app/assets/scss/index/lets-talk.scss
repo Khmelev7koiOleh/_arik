@@ -53,4 +53,7 @@
   &__content {
     padding-block: clamp(15px, 12vw, 160px);
   }
+  &__button {
+    transition: color 0.8s ease;
+  }
 }

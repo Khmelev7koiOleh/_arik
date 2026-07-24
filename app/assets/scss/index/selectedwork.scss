@@ -1,4 +1,6 @@
 @use "@/assets/scss/style" as *;
+@use "@/assets/scss/cardwork" as *;
+
 .selectedwork {
   padding-top: clamp(15px, 12vw, 160px);
   padding-bottom: clamp(60px, 12vw, 163px);
@@ -20,31 +22,21 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+
     @media (min-width: $mobile) {
       grid-template-columns: repeat(2, 1fr);
     }
     gap: 32px;
+
+    &:hover {
+      .card-work__container::after {
+        opacity: 1;
+      }
+      .card-work__container:hover::after {
+        opacity: 0;
+      }
+    }
+  }
+  &__card-work {
   }
 }
-
-// .header-work {
-//   &__title {
-//     color: $liteColor;
-//     font-family: "Satoshi", sans-serif;
-//     font-weight: 300;
-//     padding-left: 10px;
-//     padding-block: 10px;
-//     @media (min-width: $mobile) {
-//       padding-left: 32px;
-//       padding-block: 32px;
-//     }
-
-//     span {
-//       font-family: "Gambetta", serif;
-//       font-weight: 300;
-//       font-style: italic;
-//     }
-//   }
-//   &__button {
-//   }
-// }

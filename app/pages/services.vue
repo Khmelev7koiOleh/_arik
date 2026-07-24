@@ -10,6 +10,11 @@ const allicons = ref([
   "/clients/06.svg",
 ]);
 const duplicatedIcons = [...allicons.value, ...allicons.value];
+const smth = ref(null);
+const scrollTo = () => {
+  console.log(smth.value);
+  smth.value.scrollIntoView({ behavior: "smooth" });
+};
 const loaded = ref(false);
 onMounted(() => {
   requestAnimationFrame(() => {
@@ -40,7 +45,7 @@ onMounted(() => {
           business stand out.
         </p>
 
-        <div class="hero-services__button-container">
+        <div @click="scrollTo(smth)" class="hero-services__button-container">
           <div class="button--default">
             <svg
               width="13"
@@ -97,7 +102,7 @@ onMounted(() => {
   </section>
 
   <section class="services">
-    <div class="services__container">
+    <div ref="smth" class="services__container">
       <div class="services__item item-services">
         <span class="item-services__label text-font__subtitle">Webdesign</span>
         <h2 class="item-services__title">

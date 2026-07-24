@@ -12,10 +12,11 @@
   }
 
   &__button-container {
-    padding-block: clamp(15px, 6vw, 64px);
+    margin-block: clamp(15px, 6vw, 64px);
     display: flex;
     justify-content: center;
     align-items: center;
+
     gap: 12.5px;
   }
   &__button__text {

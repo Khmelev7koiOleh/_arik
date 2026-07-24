@@ -22,7 +22,7 @@
     align-items: start;
     // justify-content: flex-start;
     // align-items: flex-start;
-    gap: 15px;
+
     padding: clamp(15px, 4vw, 48px);
     background: $mutedColor;
     border-radius: 2px;
@@ -36,22 +36,33 @@
 
     text-decoration: none;
   }
+  &__subtitle {
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
 
   &__index {
     color: $mainColor;
   }
   &__title {
     color: $liteColor;
-
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
     &:hover {
       text-decoration: underline;
     }
   }
+
   &__text {
     color: $mainColor;
-    margin-bottom: 17px;
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
   }
   &__button-container {
+    padding-left: 0px;
     align-self: start;
   }
   &__button {

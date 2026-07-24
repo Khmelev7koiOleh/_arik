@@ -2,8 +2,7 @@
 import { useRoute } from "vue-router";
 const route = useRoute();
 const content = ref(null);
-// console.log(route.query.category);
-// console.log(route.query.author);
+
 const scrollTo = () => {
   content.value.scrollIntoView({ behavior: "smooth" });
 };
@@ -150,12 +149,12 @@ onMounted(() => {
             </li>
           </ul>
         </div>
-        <div ref="content" class="blogpage__image image-blogpage">
+        <div class="blogpage__image image-blogpage">
           <div class="image-blogpage__container">
             <img :src="route.query.image?.toString()" alt="" />
           </div>
         </div>
-        <div class="blogpage__body body-blogpage">
+        <div ref="content" class="blogpage__body body-blogpage">
           <div class="body-blogpage__container">
             <section>
               <h2>Elit ullamcorper dignissim</h2>
