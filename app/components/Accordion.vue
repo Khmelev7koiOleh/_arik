@@ -5,7 +5,7 @@ const props = defineProps<{
   wrapperClass?: string;
   listClass?: string;
   titleClass?: string;
-
+  flex: string;
   img?: string;
   rotate?: string;
   width?: string;
@@ -107,15 +107,11 @@ onUnmounted(() => {
   cursor: pointer;
   display: flex;
   align-content: center;
-
-  &:not(:last-child) {
-    margin-bottom: 32px;
-  }
 }
 
 .accordion__title-text {
   position: relative;
-  width: 100%;
+  flex-grow: v-bind(flex);
   &::after {
     content: "";
     position: absolute;

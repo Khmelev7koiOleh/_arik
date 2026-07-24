@@ -6,7 +6,7 @@ import CardWork from "~/components/CardWork.vue";
 import { useParallax } from "~/composables/useParallax";
 import { useIntersection } from "@/composables/useIntersection";
 const { target: servicesTarget, isVisible: servicesVisible } =
-  useIntersection(0.1);
+  useIntersection(0.15);
 const { target: selectedWorkTarget, isVisible: selectedWorkVisible } =
   useIntersection(0.1);
 const { target: processTarget, isVisible: processVisible } =
@@ -117,7 +117,7 @@ onMounted(() => {
       </div>
     </section>
 
-    <section ref="servicesSection" class="skills">
+    <div ref="servicesSection" class="skills">
       <div ref="servicesTarget" class="skills__container">
         <article
           class="skills__item item-skills show-animation"
@@ -207,7 +207,7 @@ onMounted(() => {
           </div>
         </article>
       </div>
-    </section>
+    </div>
 
     <section
       ref="selectedWorkTarget"
@@ -266,36 +266,22 @@ onMounted(() => {
             <div ref="processSection1" class="items-process__item item-process">
               <div ref="processItem1" class="item-process__body">
                 <div class="item-process__time">2 hours</div>
-                <div class="item-process__subtitle text-font__subtitle">
-                  Do we match?
-                </div>
-                <div
-                  class="item-process__title text-font__title text-font__title--m"
-                >
-                  Discovery Call
-                </div>
-                <div
-                  class="item-process__text text-font__text text-font__text--s"
-                >
+                <div class="item-process__subtitle">Do we match?</div>
+                <div class="item-process__title">Discovery Call</div>
+                <div class="item-process__text">
                   Before we start, we determine if and how I can help you. What
                   are your requirements for your new website? Why do you need a
                   new website? What goals do you have, and what problems can we
                   solve with a new website?
                 </div>
                 <ul class="item-process__list">
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
+                  <li class="item-process__list-item">
                     We get to know each other better
                   </li>
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
+                  <li class="item-process__list-item">
                     Determine how I can best assist you
                   </li>
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
+                  <li class="item-process__list-item">
                     Understand the goals you have for your website
                   </li>
                 </ul>
@@ -305,17 +291,9 @@ onMounted(() => {
             <div ref="processSection2" class="items-process__item item-process">
               <div ref="processItem2" class="item-process__body">
                 <div class="item-process__time">1 week</div>
-                <div class="item-process__subtitle text-font__subtitle">
-                  lorem ipsum
-                </div>
-                <div
-                  class="item-process__title text-font__title text-font__title--m"
-                >
-                  Concept & STrategy
-                </div>
-                <div
-                  class="item-process__text text-font__text text-font__text--s"
-                >
+                <div class="item-process__subtitle">lorem ipsum</div>
+                <div class="item-process__title">Concept & STrategy</div>
+                <div class="item-process__text">
                   Together, we develop a strategy that successfully combines
                   your goals with the needs of your target audience. Based on
                   this concept, I create the first wireframes and an interactive
@@ -323,38 +301,18 @@ onMounted(() => {
                   website and the user interface.
                 </div>
                 <ul class="item-process__list">
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
-                    UX Design
-                  </li>
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
-                    Wireframes
-                  </li>
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
-                    Interactive Prototype
-                  </li>
+                  <li class="item-process__list-item">UX Design</li>
+                  <li class="item-process__list-item">Wireframes</li>
+                  <li class="item-process__list-item">Interactive Prototype</li>
                 </ul>
               </div>
             </div>
             <div ref="processSection3" class="items-process__item item-process">
               <div ref="processItem3" class="item-process__body">
                 <div class="item-process__time">1 week</div>
-                <div class="item-process__subtitle text-font__subtitle">
-                  SOme MAgic
-                </div>
-                <div
-                  class="item-process__title text-font__title text-font__title--m"
-                >
-                  web Design
-                </div>
-                <div
-                  class="item-process__text text-font__text text-font__text--s"
-                >
+                <div class="item-process__subtitle">SOme MAgic</div>
+                <div class="item-process__title">web Design</div>
+                <div class="item-process__text">
                   Now comes the magic. Based on the previously developed
                   concept, I create a high-end screen design perfectly tailored
                   to your brand. A web design that sets you apart from your
@@ -362,14 +320,10 @@ onMounted(() => {
                   an excellent user experience.
                 </div>
                 <ul class="item-process__list">
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
+                  <li class="item-process__list-item">
                     High-end web design tailored to your brand
                   </li>
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
+                  <li class="item-process__list-item">
                     Interactive prototype of the design
                   </li>
                 </ul>
@@ -378,17 +332,9 @@ onMounted(() => {
             <div ref="processSection4" class="items-process__item item-process">
               <div ref="processItem4" class="item-process__body">
                 <div class="item-process__time">2 weeks</div>
-                <div class="item-process__subtitle text-font__subtitle">
-                  More Magic
-                </div>
-                <div
-                  class="item-process__title text-font__title text-font__title--m"
-                >
-                  Development
-                </div>
-                <div
-                  class="item-process__text text-font__text text-font__text--s"
-                >
+                <div class="item-process__subtitle">More Magic</div>
+                <div class="item-process__title">Development</div>
+                <div class="item-process__text">
                   In this step, we breathe life into your new high-end design.
                   You will receive a custom-built website using a modular web
                   design system and CMS integration. Animations will add the
@@ -396,38 +342,22 @@ onMounted(() => {
                   competition.
                 </div>
                 <ul class="item-process__list">
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
-                    Custom framer website
-                  </li>
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
+                  <li class="item-process__list-item">Custom framer website</li>
+                  <li class="item-process__list-item">
                     Modular web design systems
                   </li>
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
-                    CMS integration
-                  </li>
+                  <li class="item-process__list-item">CMS integration</li>
                 </ul>
               </div>
             </div>
             <div ref="processSection5" class="items-process__item item-process">
               <div ref="processItem5" class="item-process__body">
                 <div class="item-process__time">2 hours</div>
-                <div class="item-process__subtitle text-font__subtitle">
-                  ready to go
-                </div>
-                <div
-                  class="item-process__title text-font__title text-font__title--m"
-                >
+                <div class="item-process__subtitle">ready to go</div>
+                <div class="item-process__title text-font__title">
                   WEbsite onboarding
                 </div>
-                <div
-                  class="item-process__text text-font__text text-font__text--s"
-                >
+                <div class="item-process__text">
                   In a personal Framer workshop, I will show you how to make
                   changes to your new website quickly and easily. Additionally,
                   you will receive personalized Framer video tutorials that you
@@ -436,19 +366,11 @@ onMounted(() => {
                   It's as simple as that.
                 </div>
                 <ul class="item-process__list">
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
-                    Personal workshop
-                  </li>
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
+                  <li class="item-process__list-item">Personal workshop</li>
+                  <li class="item-process__list-item">
                     Personalized video tutorials
                   </li>
-                  <li
-                    class="item-process__list-item text-font__list-item text-font__list-item--s"
-                  >
+                  <li class="item-process__list-item">
                     Edit text and images directly on your website
                   </li>
                 </ul>
@@ -509,18 +431,18 @@ onMounted(() => {
                   </defs>
                 </svg>
               </div>
-              <div class="item-reviews__title text-font__title">
+              <div class="item-reviews__title">
                 Amazing Results with Arik’s Premium Web Design Services.
               </div>
 
-              <p class="item-reviews__text text-font__text">
+              <p class="item-reviews__text">
                 Arik is a top-notch web designer who created a stunning website
                 for my business. He was attentive to my needs and provided
                 excellent customer service throughout the entire process. I
                 highly recommend his services.
               </p>
 
-              <div class="item-reviews__author text-font__subtitle">
+              <div class="item-reviews__author">
                 <div class="item-reviews__image">
                   <img src="/reviews/01.jpg" alt="" />
                 </div>
@@ -595,11 +517,11 @@ onMounted(() => {
                   />
                 </svg>
               </div>
-              <div class="item-reviews__title text-font__title">
+              <div class="item-reviews__title">
                 Professional, Collaborative Web Design Experience with Arik.
               </div>
 
-              <p class="item-reviews__text text-font__text">
+              <p class="item-reviews__text">
                 I had the pleasure of working with Arik on a website development
                 project and was blown away by his expertise and professionalism.
                 He made the process seamless and delivered a website that
@@ -607,7 +529,7 @@ onMounted(() => {
                 web development needs.
               </p>
 
-              <div class="item-reviews__author text-font__subtitle">
+              <div class="item-reviews__author">
                 <div class="item-reviews__image">
                   <img src="/reviews/03.jpg" alt="" />
                 </div>
@@ -645,18 +567,18 @@ onMounted(() => {
                   </defs>
                 </svg>
               </div>
-              <div class="item-reviews__title text-font__title">
+              <div class="item-reviews__title">
                 Web Design and Content Solutions: Stand Out from the Crowd.
               </div>
 
-              <p class="item-reviews__text text-font__text">
+              <p class="item-reviews__text">
                 Arik's SEO services have helped my business improve its online
                 presence and increase traffic to our website. He is
                 knowledgeable, professional, and provides excellent results. I
                 highly recommend him for all your SEO needs.
               </p>
 
-              <div class="item-reviews__author text-font__subtitle">
+              <div class="item-reviews__author">
                 <div class="item-reviews__image">
                   <img src="/reviews/05.jpg" alt="" />
                 </div>
@@ -690,11 +612,11 @@ onMounted(() => {
                   </defs>
                 </svg>
               </div>
-              <div class="item-reviews__title text-font__title">
+              <div class="item-reviews__title">
                 Expert Webflow and SEO Services: Excellent Work, Great Results.
               </div>
 
-              <p class="item-reviews__text text-font__text">
+              <p class="item-reviews__text">
                 Working with Arik on my website redesign was a fantastic
                 experience. He was able to take my vision and turn it into a
                 beautiful and functional website. His attention to detail and
@@ -702,7 +624,7 @@ onMounted(() => {
                 end result.
               </p>
 
-              <div class="item-reviews__author text-font__subtitle">
+              <div class="item-reviews__author">
                 <div class="item-reviews__image">
                   <img src="/reviews/02.jpg" alt="" />
                 </div>
@@ -729,11 +651,11 @@ onMounted(() => {
                   />
                 </svg>
               </div>
-              <div class="item-reviews__title text-font__title">
+              <div class="item-reviews__title">
                 Expertise in Web Design: Second to None with Arik.
               </div>
 
-              <p class="item-reviews__text text-font__text">
+              <p class="item-reviews__text">
                 Arik is not only an exceptional web designer, but also a
                 pleasure to work with. He took the time to understand my
                 business and its unique needs, and created a website that
@@ -741,7 +663,7 @@ onMounted(() => {
                 services to anyone looking for a top-quality web designer.
               </p>
 
-              <div class="item-reviews__author text-font__subtitle">
+              <div class="item-reviews__author">
                 <div class="item-reviews__image">
                   <img src="/reviews/04.jpg" alt="" />
                 </div>
@@ -768,12 +690,12 @@ onMounted(() => {
                   />
                 </svg>
               </div>
-              <div class="item-reviews__title text-font__title">
+              <div class="item-reviews__title">
                 High-Quality Web Design: Exceptional Attention to Detail with
                 Arik.
               </div>
 
-              <p class="item-reviews__text text-font__text">
+              <p class="item-reviews__text">
                 Arik's development services are top-notch. He is able to take
                 complex ideas and turn them into functional, user-friendly
                 websites. His attention to detail and commitment to customer
@@ -781,7 +703,7 @@ onMounted(() => {
                 web development needs.
               </p>
 
-              <div class="item-reviews__author text-font__subtitle">
+              <div class="item-reviews__author">
                 <div class="item-reviews__image">
                   <img src="/reviews/06.jpg" alt="" />
                 </div>
@@ -853,16 +775,56 @@ onMounted(() => {
               </div>
               <div class="content-module__icons">
                 <div class="content-module__icon">
-                  <img src="/about-module/01.svg" alt="" />
+                  <svg
+                    width="17"
+                    height="15"
+                    viewBox="0 0 17 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.7233 2.1641C16.688 2.07903 16.6285 2.00625 16.552 1.95484C16.4756 1.90343 16.3858 1.87567 16.2937 1.87503H13.8249C13.5198 1.31458 13.0709 0.845492 12.5244 0.515964C11.978 0.186437 11.3536 0.00835989 10.7155 3.43041e-05C9.75681 -0.00413371 8.83548 0.371664 8.15318 1.04518C7.47087 1.7187 7.08317 2.63509 7.07491 3.59378V4.27347C3.76241 3.48441 1.02804 0.789097 0.996785 0.765659C0.936556 0.706203 0.861353 0.664161 0.779158 0.643997C0.696962 0.623833 0.610841 0.626298 0.529934 0.651131C0.449027 0.675964 0.376352 0.722238 0.319622 0.785043C0.262893 0.847847 0.224225 0.924839 0.207722 1.00785C-0.471965 4.7266 0.645223 7.21097 1.69991 8.64066C2.25929 9.40617 2.94643 10.0695 3.73116 10.6016C2.52022 12.0703 0.528035 12.836 0.504598 12.8438C0.438036 12.8683 0.378029 12.9078 0.329247 12.9593C0.280465 13.0108 0.244225 13.0729 0.223347 13.1407C0.201178 13.2068 0.19458 13.2772 0.204066 13.3463C0.213551 13.4154 0.238865 13.4814 0.278035 13.5391C0.35616 13.6563 1.12179 14.6875 3.79366 14.6875C9.23897 14.6875 13.7937 10.4766 14.2312 5.07035L16.6218 2.67191C16.6895 2.60842 16.7358 2.52534 16.754 2.43428C16.7722 2.34323 16.7615 2.24876 16.7233 2.1641ZM13.4421 4.53128C13.3608 4.61236 13.3134 4.72125 13.3093 4.83597C12.989 9.83597 8.80929 13.75 3.79366 13.75C2.70772 13.75 2.01241 13.5625 1.59835 13.375C2.48116 12.9297 3.92647 12.0547 4.80929 10.7266C4.84446 10.6715 4.86812 10.6099 4.87886 10.5455C4.8896 10.481 4.8872 10.4151 4.87179 10.3516C4.85513 10.2866 4.82495 10.2259 4.78321 10.1734C4.74148 10.1209 4.68913 10.0778 4.6296 10.0469C4.61397 10.0469 3.4421 9.43753 2.42647 8.04691C1.21553 6.39066 0.738972 4.36722 1.0046 2.03128C2.14522 3.00003 4.60616 4.82816 7.46553 5.30472C7.53283 5.3175 7.60214 5.31513 7.6684 5.29776C7.73466 5.28039 7.79623 5.24847 7.8486 5.20433C7.90098 5.16018 7.94286 5.10491 7.9712 5.04254C7.99953 4.98018 8.01361 4.91228 8.01241 4.84378V3.59378C8.0186 2.8858 8.30473 2.20904 8.80828 1.71134C9.31184 1.21363 9.9919 0.935443 10.6999 0.937534C11.2115 0.944921 11.7102 1.09903 12.1367 1.38156C12.5633 1.66408 12.8998 2.06313 13.1062 2.53128C13.1418 2.6155 13.2017 2.68721 13.2782 2.73729C13.3547 2.78738 13.4444 2.81357 13.5358 2.81253H15.1608L13.4421 4.53128Z"
+                    />
+                  </svg>
                 </div>
                 <div class="content-module__icon">
-                  <img src="/about-module/02.svg" alt="" />
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.65625 4.0625C6.94547 4.0625 6.25066 4.27327 5.65967 4.66816C5.06868 5.06304 4.60806 5.62431 4.33606 6.28098C4.06406 6.93765 3.99289 7.66024 4.13155 8.35736C4.27022 9.05447 4.61249 9.69482 5.11509 10.1974C5.61768 10.7 6.25803 11.0423 6.95514 11.1809C7.65226 11.3196 8.37485 11.2484 9.03152 10.9764C9.68819 10.7044 10.2495 10.2438 10.6443 9.65283C11.0392 9.06184 11.25 8.36703 11.25 7.65625C11.25 6.70313 10.8714 5.78904 10.1974 5.11509C9.52346 4.44113 8.60937 4.0625 7.65625 4.0625ZM7.65625 10.3125C7.13089 10.3125 6.61733 10.1567 6.18052 9.86484C5.7437 9.57297 5.40324 9.15812 5.2022 8.67275C5.00115 8.18739 4.94855 7.6533 5.05104 7.13804C5.15353 6.62278 5.40651 6.14948 5.778 5.778C6.14948 5.40651 6.62278 5.15353 7.13804 5.05104C7.6533 4.94855 8.18739 5.00115 8.67275 5.2022C9.15812 5.40324 9.57297 5.7437 9.86484 6.18052C10.1567 6.61733 10.3125 7.13089 10.3125 7.65625C10.3104 8.3601 10.0299 9.03453 9.53223 9.53223C9.03453 10.0299 8.3601 10.3104 7.65625 10.3125ZM11.0938 0H4.21875C3.09987 0 2.02681 0.444474 1.23564 1.23564C0.444474 2.02681 0 3.09987 0 4.21875V11.0938C0 12.2126 0.444474 13.2857 1.23564 14.0769C2.02681 14.868 3.09987 15.3125 4.21875 15.3125H11.0938C12.2126 15.3125 13.2857 14.868 14.0769 14.0769C14.868 13.2857 15.3125 12.2126 15.3125 11.0938V4.21875C15.3125 3.09987 14.868 2.02681 14.0769 1.23564C13.2857 0.444474 12.2126 0 11.0938 0ZM14.375 11.0938C14.375 11.964 14.0293 12.7986 13.4139 13.4139C12.7986 14.0293 11.964 14.375 11.0938 14.375H4.21875C3.34851 14.375 2.51391 14.0293 1.89856 13.4139C1.2832 12.7986 0.9375 11.964 0.9375 11.0938V4.21875C0.9375 3.34851 1.2832 2.51391 1.89856 1.89856C2.51391 1.2832 3.34851 0.9375 4.21875 0.9375H11.0938C11.964 0.9375 12.7986 1.2832 13.4139 1.89856C14.0293 2.51391 14.375 3.34851 14.375 4.21875V11.0938ZM12.5 3.59375C12.5 3.74827 12.4542 3.89931 12.3683 4.02779C12.2825 4.15627 12.1605 4.2564 12.0177 4.31553C11.875 4.37466 11.7179 4.39013 11.5663 4.35999C11.4148 4.32984 11.2756 4.25544 11.1663 4.14618C11.0571 4.03692 10.9827 3.89771 10.9525 3.74616C10.9224 3.59462 10.9378 3.43753 10.997 3.29478C11.0561 3.15202 11.1562 3.03001 11.2847 2.94416C11.4132 2.85832 11.5642 2.8125 11.7188 2.8125C11.926 2.8125 12.1247 2.89481 12.2712 3.04132C12.4177 3.18784 12.5 3.38655 12.5 3.59375Z"
+                    />
+                  </svg>
                 </div>
                 <div class="content-module__icon">
-                  <img src="/about-module/03.svg" alt="" />
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.9375 8.02346V7.96878C15.9382 6.78432 15.6741 5.61468 15.1645 4.54546C14.6549 3.47623 13.9127 2.53447 12.9922 1.78909L12.9531 1.75003L12.9141 1.71878C11.5078 0.602508 9.76424 -0.00345297 7.96875 2.6025e-05C6.77518 -0.00305147 5.5967 0.266848 4.52344 0.789088L4.42969 0.828151C3.34106 1.37105 2.39044 2.15484 1.64997 3.12001C0.90951 4.08519 0.398677 5.20637 0.156253 6.39846V6.41409C0.0519273 6.92573 -0.000421999 7.44661 2.56171e-06 7.96878C0.000304009 9.20665 0.289273 10.4274 0.843953 11.5341C1.39863 12.6407 2.20374 13.6028 3.19532 14.3438L3.27344 14.4063H3.28907C4.64746 15.3994 6.28606 15.9355 7.96875 15.9375C8.87108 15.9403 9.76709 15.787 10.6172 15.4844L10.6641 15.4688C12.1952 14.915 13.5207 13.9067 14.4632 12.579C15.4056 11.2512 15.92 9.66723 15.9375 8.03909V8.02346ZM14.9844 7.52346C14.7344 7.50784 14.4766 7.50003 14.2188 7.50003C13.0245 7.49861 11.8359 7.66428 10.6875 7.99221C10.3982 7.11541 10.0213 6.26999 9.5625 5.46878L9.52344 5.41409C10.7182 4.71017 11.794 3.82157 12.7109 2.78128C14.0556 4.00694 14.8709 5.70754 14.9844 7.52346ZM11.9766 2.19534C11.1272 3.15972 10.1273 3.98023 9.01563 4.62503C8.11685 3.33035 6.9921 2.20825 5.69532 1.31253C6.73835 0.957876 7.85006 0.852997 8.94101 1.00633C10.032 1.15966 11.0717 1.56692 11.9766 2.19534ZM4.66406 1.76565C6.0472 2.61835 7.24315 3.74254 8.17969 5.07034C6.55273 5.84814 4.77208 6.25125 2.96875 6.25003C2.37257 6.24883 1.77727 6.20444 1.1875 6.11721C1.4409 5.19372 1.87988 4.33156 2.47761 3.58338C3.07535 2.8352 3.81931 2.2167 4.66406 1.76565ZM0.937503 7.96878C0.938614 7.65787 0.959489 7.34735 1 7.03909C1.65188 7.13541 2.3098 7.18502 2.96875 7.18753C4.95439 7.19151 6.91414 6.73699 8.69532 5.8594L8.75 5.94534C9.17943 6.68537 9.53029 7.46827 9.79688 8.28128C9.08991 8.53384 8.4074 8.85025 7.75782 9.22659C6.00759 10.2293 4.51711 11.6288 3.40625 13.3125C2.63264 12.6535 2.01126 11.8344 1.58504 10.9118C1.15881 9.98917 0.937879 8.98507 0.937503 7.96878ZM4.15625 13.875C5.5739 11.7264 7.63624 10.0826 10.0469 9.17971C10.272 10.1055 10.3848 11.0551 10.3828 12.0078C10.3862 12.9043 10.2866 13.7982 10.0859 14.6719C9.09993 14.9844 8.05702 15.075 7.03189 14.9373C6.00676 14.7995 5.02477 14.4368 4.15625 13.875ZM11.1328 14.25C11.2576 13.5091 11.3203 12.7591 11.3203 12.0078C11.3213 10.9575 11.1954 9.91082 10.9453 8.89065C12.0108 8.5915 13.1121 8.43905 14.2188 8.43753C14.4766 8.43753 14.7266 8.44534 14.9844 8.46096C14.8978 9.67658 14.4974 10.849 13.8223 11.8636C13.1473 12.8783 12.2206 13.7005 11.1328 14.25Z"
+                    />
+                  </svg>
                 </div>
                 <div class="content-module__icon">
-                  <img src="/about-module/04.svg" alt="" />
+                  <svg
+                    width="18"
+                    height="11"
+                    viewBox="0 0 18 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.625 1.71875C10.625 1.59443 10.6744 1.4752 10.7623 1.38729C10.8502 1.29939 10.9694 1.25 11.0938 1.25H16.0938C16.2181 1.25 16.3373 1.29939 16.4252 1.38729C16.5131 1.4752 16.5625 1.59443 16.5625 1.71875C16.5625 1.84307 16.5131 1.9623 16.4252 2.05021C16.3373 2.13811 16.2181 2.1875 16.0938 2.1875H11.0938C10.9694 2.1875 10.8502 2.13811 10.7623 2.05021C10.6744 1.9623 10.625 1.84307 10.625 1.71875ZM17.1875 7.34375C17.1875 7.46807 17.1381 7.5873 17.0502 7.67521C16.9623 7.76311 16.8431 7.8125 16.7188 7.8125H10.9766C11.088 8.42567 11.411 8.98035 11.8892 9.38003C12.3674 9.77971 12.9705 9.99909 13.5938 10C13.9427 10.0022 14.2885 9.93415 14.6106 9.79993C14.9328 9.66572 15.2246 9.46807 15.4688 9.21875C15.5577 9.13237 15.6768 9.08405 15.8008 9.08405C15.9248 9.08405 16.0439 9.13237 16.1328 9.21875C16.1775 9.26175 16.213 9.31332 16.2373 9.37037C16.2615 9.42742 16.274 9.48878 16.274 9.55078C16.274 9.61278 16.2615 9.67414 16.2373 9.73119C16.213 9.78824 16.1775 9.83981 16.1328 9.88281C15.5444 10.4703 14.7704 10.8355 13.9429 10.9163C13.1153 10.9971 12.2854 10.7884 11.5944 10.3258C10.9035 9.86323 10.3944 9.17538 10.1538 8.37947C9.91315 7.58355 9.95597 6.72883 10.2749 5.96096C10.5939 5.19308 11.1693 4.55957 11.903 4.16838C12.6367 3.77718 13.4833 3.65251 14.2987 3.81561C15.114 3.97871 15.8476 4.41949 16.3743 5.06283C16.9011 5.70617 17.1885 6.51226 17.1875 7.34375ZM16.2109 6.875C16.104 6.25842 15.7828 5.69939 15.304 5.29647C14.8252 4.89355 14.2195 4.67262 13.5938 4.67262C12.968 4.67262 12.3623 4.89355 11.8835 5.29647C11.4047 5.69939 11.0835 6.25842 10.9766 6.875H16.2109ZM8.75 7.8125C8.75 8.6413 8.42076 9.43616 7.83471 10.0222C7.24866 10.6083 6.4538 10.9375 5.625 10.9375H0.46875C0.34443 10.9375 0.225201 10.8881 0.137294 10.8002C0.049386 10.7123 0 10.5931 0 10.4688V0.46875C0 0.34443 0.049386 0.225201 0.137294 0.137294C0.225201 0.049386 0.34443 2.7589e-08 0.46875 2.7589e-08H4.6875C5.24994 -7.87323e-05 5.79948 0.168474 6.26515 0.483888C6.73082 0.799303 7.09122 1.24709 7.29981 1.76941C7.50841 2.29174 7.55561 2.86461 7.43532 3.41403C7.31502 3.96345 7.03277 4.46419 6.625 4.85156C7.24443 5.06078 7.78263 5.45901 8.16384 5.99018C8.54505 6.52134 8.75005 7.1587 8.75 7.8125ZM0.9375 4.6875H4.6875C5.18478 4.6875 5.6617 4.48996 6.01333 4.13833C6.36496 3.78669 6.5625 3.30978 6.5625 2.8125C6.5625 2.31522 6.36496 1.83831 6.01333 1.48667C5.6617 1.13504 5.18478 0.9375 4.6875 0.9375H0.9375V4.6875ZM7.8125 7.8125C7.81044 7.23297 7.57931 6.67777 7.16952 6.26798C6.75973 5.85819 6.20453 5.62706 5.625 5.625H0.9375V10H5.625C6.20453 9.99794 6.75973 9.76681 7.16952 9.35702C7.57931 8.94723 7.81044 8.39203 7.8125 7.8125Z"
+                    />
+                  </svg>
                 </div>
               </div>
             </div>

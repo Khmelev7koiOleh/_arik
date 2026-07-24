@@ -46,6 +46,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     @media (min-width: $mobile) {
       flex-direction: row;
       justify-content: space-between;
@@ -59,7 +60,7 @@
     letter-spacing: 0.5px;
     line-height: 180%;
     color: $mainColor;
-    text-transform: uppercase;
+
     color: $mainColor;
   }
 
@@ -183,6 +184,7 @@
     gap: 16px;
     color: $liteColor;
   }
+
   &__link {
     font-family: "Satoshi", sans-serif;
     font-weight: 300;
@@ -206,7 +208,7 @@
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  text-align: center;
+  text-align: start;
 
   &__title {
     font-family: "Satoshi", sans-serif;

@@ -3,6 +3,24 @@
   &__container {
     position: relative;
     overflow: hidden;
+    transition: opacity 1s ease;
+    padding: 0px;
+    border: 1px solid $grayColor;
+    border-radius: 2px;
+
+    &::after {
+      transition: opacity 1s ease;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      opacity: 0;
+    }
     &:hover {
       .card-work__image img {
         scale: 1.05;
@@ -13,10 +31,20 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 2px;
-    border: 1px solid $grayColor;
-    aspect-ratio: 684/513;
 
+    aspect-ratio: 684/513;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url("@/assets/img/noise.png");
+    }
     img {
       transition: scale 1s ease;
       width: 100%;
@@ -37,7 +65,7 @@
   flex-wrap: wrap;
   padding: 12px;
   border-radius: 2px;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(4px);
   background-color: $grayColor;
   border: 1px solid $grayColor;
   display: flex;

@@ -77,7 +77,9 @@ const goTo = (path: string) => {
           <NuxtLink
             @click="goTo('/work/work')"
             class="nav-header__link"
-            :class="{ 'nav-header__link--active': $route.path === '/work' }"
+            :class="{
+              'nav-header__link--active': $route.path.startsWith('/work'),
+            }"
             >Work</NuxtLink
           >
           <NuxtLink
@@ -89,7 +91,9 @@ const goTo = (path: string) => {
           <NuxtLink
             @click="goTo('/blog/blog')"
             class="nav-header__link"
-            :class="{ 'nav-header__link--active': $route.path === '/blog' }"
+            :class="{
+              'nav-header__link--active': $route.path.startsWith('/blog'),
+            }"
             >Blog</NuxtLink
           >
           <NuxtLink
