@@ -1,5 +1,5 @@
 <template>
-  <div class="loader">Loading ...</div>
+  <div class="loader"><div class="loading-text">Loading ...</div></div>
 </template>
 
 <style scoped>
@@ -24,5 +24,24 @@
   pointer-events: all;
   touch-action: none;
   overscroll-behavior: none;
+}
+.loading-text {
+  font-size: 2rem;
+  font-family: "Chillax", sans-serif;
+
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 </style>
